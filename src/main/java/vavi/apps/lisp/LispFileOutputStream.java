@@ -14,7 +14,7 @@ import java.io.PrintWriter;
 /**
  * The file output stream as lisp primitive.
  * 
- * @author <a href="mailto:vavivavi@yahoo.co.jp">Naohide Sano</a> (nsano)
+ * @author <a href="mailto:umjammer@gmail.com">Naohide Sano</a> (nsano)
  * @version 0.00 970730 nsano make the initial version <br>
  */
 public final class LispFileOutputStream extends PrintWriter implements LispPrintable {

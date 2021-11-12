@@ -20,7 +20,7 @@ import java.util.Map;
  * 
  * TODO comment implementation is bad.
  * 
- * @author <a href="mailto:vavivavi@yahoo.co.jp">Naohide Sano</a> (nsano)
+ * @author <a href="mailto:umjammer@gmail.com">Naohide Sano</a> (nsano)
  * @version 0.00 970730 nsano make the initial version <br>
  *          0.01 971203 nsano add ready <br>
  *          0.02 980130 nsano add the encoding to the reader <br>
@@ -428,19 +428,19 @@ public final class LispReader {
         return reader.ready();
     }
 
-    /** ƒVƒ“ƒ{ƒ‹‚ÌƒLƒƒƒbƒVƒ… */
+    /** ã‚·ãƒ³ãƒœãƒ«ã®ã‚­ãƒ£ãƒƒã‚·ãƒ¥ */
     private Map<String, LispSymbol> symbolMap;
 
-    /** ƒŠ[ƒ_ */
+    /** ãƒªãƒ¼ãƒ€ */
     private Reader reader;
 
-    /** ƒJƒŒƒ“ƒg‚Ì•¶š */
+    /** ã‚«ãƒ¬ãƒ³ãƒˆã®æ–‡å­— */
     private char ch;
 
-    /** ¡‚Ü‚Å“Ç‚İ‚±‚ñ‚¾•¶š—ñ */
+    /** ä»Šã¾ã§èª­ã¿ã“ã‚“ã æ–‡å­—åˆ— */
     private StringBuilder charsSoFar;
 
-    /** ƒNƒI[ƒg */
+    /** ã‚¯ã‚ªãƒ¼ãƒˆ */
     private LispSymbol quote;
 }
 

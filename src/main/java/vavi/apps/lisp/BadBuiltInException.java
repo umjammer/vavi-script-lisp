@@ -11,19 +11,19 @@ package vavi.apps.lisp;
 
 
 /**
- * ƒrƒ‹ƒgƒCƒ“‚ÌƒvƒŠƒ~ƒeƒBƒu‚ª³‚µ‚­‚È‚¢ê‡‚ÉƒXƒ[‚³‚ê‚Ü‚·D
+ * ãƒ“ãƒ«ãƒˆã‚¤ãƒ³ã®ãƒ—ãƒªãƒŸãƒ†ã‚£ãƒ–ãŒæ­£ã—ããªã„å ´åˆã«ã‚¹ãƒ­ãƒ¼ã•ã‚Œã¾ã™ï¼
  * 
- * @author <a href="mailto:vavivavi@yahoo.co.jp">Naohide Sano</a> (nsano)
+ * @author <a href="mailto:umjammer@gmail.com">Naohide Sano</a> (nsano)
  * @version 0.00 970730 nsano make the initial version <br>
  */
 public final class BadBuiltInException extends LispException {
 
-    /** Ú×ƒƒbƒZ[ƒW‚ğ‚½‚È‚¢ BadBuiltInException ‚ğ\’z‚µ‚Ü‚·D */
+    /** è©³ç´°ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã‚’æŒãŸãªã„ BadBuiltInException ã‚’æ§‹ç¯‰ã—ã¾ã™ï¼ */
     public BadBuiltInException() {
         super();
     }
 
-    /** Ú×ƒƒbƒZ[ƒW‚ğ‚Â BadBuiltInException ‚ğ\’z‚µ‚Ü‚·D */
+    /** è©³ç´°ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã‚’æŒã¤ BadBuiltInException ã‚’æ§‹ç¯‰ã—ã¾ã™ï¼ */
     public BadBuiltInException(String s) {
         super(s);
     }

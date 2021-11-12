@@ -10,7 +10,7 @@ package vavi.apps.lisp;
 /**
  * This class is the base class for a lisp special form.
  * 
- * @author <a href="mailto:vavivavi@yahoo.co.jp">Naohide Sano</a> (nsano)
+ * @author <a href="mailto:umjammer@gmail.com">Naohide Sano</a> (nsano)
  * @version 0.00 970730 nsano make the initial version <br>
  */
 public abstract class LispSpecialForm implements LispPrintable {

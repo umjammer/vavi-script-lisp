@@ -8,19 +8,19 @@ package vavi.apps.lisp;
 
 
 /**
- * “Ç‚İ‚±‚Şƒtƒ@ƒCƒ‹–¼‚ª³‚µ‚­‚È‚¢ê‡‚ÉƒXƒ[‚³‚ê‚Ü‚·D
+ * èª­ã¿ã“ã‚€ãƒ•ã‚¡ã‚¤ãƒ«åãŒæ­£ã—ããªã„å ´åˆã«ã‚¹ãƒ­ãƒ¼ã•ã‚Œã¾ã™ï¼
  * 
- * @author <a href="mailto:vavivavi@yahoo.co.jp">Naohide Sano</a> (nsano)
+ * @author <a href="mailto:umjammer@gmail.com">Naohide Sano</a> (nsano)
  * @version 0.00 970730 nsano make the initial version <br>
  */
 public final class BadLoadFileNameException extends LispException {
 
-    /** Ú×ƒƒbƒZ[ƒW‚ğ‚½‚È‚¢ BadLoadFileNameException ‚ğ\’z‚µ‚Ü‚·D */
+    /** è©³ç´°ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã‚’æŒãŸãªã„ BadLoadFileNameException ã‚’æ§‹ç¯‰ã—ã¾ã™ï¼ */
     public BadLoadFileNameException() {
         super();
     }
 
-    /** Ú×ƒƒbƒZ[ƒW‚ğ‚Â BadLoadFileNameException ‚ğ\’z‚µ‚Ü‚·D */
+    /** è©³ç´°ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã‚’æŒã¤ BadLoadFileNameException ã‚’æ§‹ç¯‰ã—ã¾ã™ï¼ */
     public BadLoadFileNameException(String s) {
         super(s);
     }

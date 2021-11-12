@@ -9,19 +9,19 @@ package vavi.apps.lisp;
 
 
 /**
- * “o˜^‚³‚ê‚Ä‚¢‚È‚¢ƒVƒ“ƒ{ƒ‹‚ğg—p‚µ‚½ê‡‚ÉƒXƒ[‚³‚ê‚Ü‚·D
+ * ç™»éŒ²ã•ã‚Œã¦ã„ãªã„ã‚·ãƒ³ãƒœãƒ«ã‚’ä½¿ç”¨ã—ãŸå ´åˆã«ã‚¹ãƒ­ãƒ¼ã•ã‚Œã¾ã™ï¼
  * 
- * @author <a href="mailto:vavivavi@yahoo.co.jp">Naohide Sano</a> (nsano)
+ * @author <a href="mailto:umjammer@gmail.com">Naohide Sano</a> (nsano)
  * @version 0.00 970730 nsano make the initial version <br>
  */
 public final class UnboundSymbolException extends LispException {
 
-    /** Ú×ƒƒbƒZ[ƒW‚ğ‚½‚È‚¢ UnboundSymbolException ‚ğ\’z‚µ‚Ü‚·D */
+    /** è©³ç´°ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã‚’æŒãŸãªã„ UnboundSymbolException ã‚’æ§‹ç¯‰ã—ã¾ã™ï¼ */
     public UnboundSymbolException() {
         super();
     }
 
-    /** Ú×ƒƒbƒZ[ƒW‚ğ‚Â UnboundSymbolException ‚ğ\’z‚µ‚Ü‚·D */
+    /** è©³ç´°ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã‚’æŒã¤ UnboundSymbolException ã‚’æ§‹ç¯‰ã—ã¾ã™ï¼ */
     public UnboundSymbolException(String s) {
         super(s);
     }

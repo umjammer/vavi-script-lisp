@@ -8,20 +8,20 @@ package vavi.apps.lisp;
 
 
 /**
- * ˆø”‚É³‚µ‚­‚È‚¢”’l‚ª‚ ‚Á‚½ê‡‚ÉƒXƒ[‚³‚ê‚Ü‚·D
+ * å¼•æ•°ã«æ­£ã—ããªã„æ•°å€¤ãŒã‚ã£ãŸå ´åˆã«ã‚¹ãƒ­ãƒ¼ã•ã‚Œã¾ã™ï¼
  * 
- * @author <a href="mailto:vavivavi@yahoo.co.jp">Naohide Sano</a> (nsano)
+ * @author <a href="mailto:umjammer@gmail.com">Naohide Sano</a> (nsano)
  * 
  * @version 0.00 970730 nsano make the initial version <br>
  */
 public final class BadNumericArgumentException extends LispException {
 
-    /** Ú×ƒƒbƒZ[ƒW‚ğ‚½‚È‚¢ BadNumericArgumentException ‚ğ\’z‚µ‚Ü‚·D */
+    /** è©³ç´°ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã‚’æŒãŸãªã„ BadNumericArgumentException ã‚’æ§‹ç¯‰ã—ã¾ã™ï¼ */
     public BadNumericArgumentException() {
         super();
     }
 
-    /** Ú×ƒƒbƒZ[ƒW‚ğ‚Â BadNumericArgumentException ‚ğ\’z‚µ‚Ü‚·D */
+    /** è©³ç´°ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã‚’æŒã¤ BadNumericArgumentException ã‚’æ§‹ç¯‰ã—ã¾ã™ï¼ */
     public BadNumericArgumentException(String s) {
         super(s);
     }

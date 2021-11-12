@@ -13,7 +13,7 @@ package vavi.apps.lisp;
 /**
  * The interface for printable lisp symbols.
  * 
- * @author <a href="mailto:vavivavi@yahoo.co.jp">Naohide Sano</a> (nsano)
+ * @author <a href="mailto:umjammer@gmail.com">Naohide Sano</a> (nsano)
  * @version 0.00 970730 nsano make the initial version <br>
  */
 interface LispPrintable {

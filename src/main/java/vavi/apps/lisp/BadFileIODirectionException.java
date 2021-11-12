@@ -8,19 +8,19 @@ package vavi.apps.lisp;
 
 
 /**
- * ƒtƒ@ƒCƒ‹‚ÌƒŠ[ƒhƒ‰ƒCƒg‚Ì•ûŒü‚ª³‚µ‚­‚È‚¢ê‡‚ÉƒXƒ[‚³‚ê‚Ü‚·D
+ * ãƒ•ã‚¡ã‚¤ãƒ«ã®ãƒªãƒ¼ãƒ‰ãƒ©ã‚¤ãƒˆã®æ–¹å‘ãŒæ­£ã—ããªã„å ´åˆã«ã‚¹ãƒ­ãƒ¼ã•ã‚Œã¾ã™ï¼
  * 
- * @author <a href="mailto:vavivavi@yahoo.co.jp">Naohide Sano</a> (nsano)
+ * @author <a href="mailto:umjammer@gmail.com">Naohide Sano</a> (nsano)
  * @version 0.00 970730 nsano make the initial version <br>
  */
 public final class BadFileIODirectionException extends LispException {
 
-    /** Ú×ƒƒbƒZ[ƒW‚ğ‚½‚È‚¢ BadFileIODirectionException ‚ğ\’z‚µ‚Ü‚·D */
+    /** è©³ç´°ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã‚’æŒãŸãªã„ BadFileIODirectionException ã‚’æ§‹ç¯‰ã—ã¾ã™ï¼ */
     public BadFileIODirectionException() {
         super();
     }
 
-    /** Ú×ƒƒbƒZ[ƒW‚ğ‚Â BadFileIODirectionException ‚ğ\’z‚µ‚Ü‚·D */
+    /** è©³ç´°ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã‚’æŒã¤ BadFileIODirectionException ã‚’æ§‹ç¯‰ã—ã¾ã™ï¼ */
     public BadFileIODirectionException(String s) {
         super(s);
     }

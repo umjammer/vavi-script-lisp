@@ -9,19 +9,19 @@ package vavi.apps.lisp;
 
 
 /**
- * ƒrƒ‹ƒgƒCƒ“‚ÌƒvƒŠƒ~ƒeƒBƒu‚ª‘¶İ‚µ‚È‚¢ê‡‚ÉƒXƒ[‚³‚ê‚Ü‚·D
+ * ãƒ“ãƒ«ãƒˆã‚¤ãƒ³ã®ãƒ—ãƒªãƒŸãƒ†ã‚£ãƒ–ãŒå­˜åœ¨ã—ãªã„å ´åˆã«ã‚¹ãƒ­ãƒ¼ã•ã‚Œã¾ã™ï¼
  * 
- * @author <a href="mailto:vavivavi@yahoo.co.jp">Naohide Sano</a> (nsano)
+ * @author <a href="mailto:umjammer@gmail.com">Naohide Sano</a> (nsano)
  * @version 0.00 970730 nsano make the initial version <br>
  */
 public final class BuiltInNotFoundException extends LispException {
 
-    /** Ú×ƒƒbƒZ[ƒW‚ğ‚½‚È‚¢ BuiltInNotFoundException ‚ğ\’z‚µ‚Ü‚·D */
+    /** è©³ç´°ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã‚’æŒãŸãªã„ BuiltInNotFoundException ã‚’æ§‹ç¯‰ã—ã¾ã™ï¼ */
     public BuiltInNotFoundException() {
         super();
     }
 
-    /** Ú×ƒƒbƒZ[ƒW‚ğ‚Â BuiltInNotFoundException ‚ğ\’z‚µ‚Ü‚·D */
+    /** è©³ç´°ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã‚’æŒã¤ BuiltInNotFoundException ã‚’æ§‹ç¯‰ã—ã¾ã™ï¼ */
     public BuiltInNotFoundException(String s) {
         super(s);
     }

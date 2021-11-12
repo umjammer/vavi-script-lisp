@@ -10,15 +10,15 @@ import java.util.List;
 
 
 /**
- * Lisp ‚ÌƒvƒŠƒ~ƒeƒBƒu‚Å‚ ‚é‚±‚Æ‚ğ¦‚·ƒCƒ“ƒ^[ƒtƒF[ƒX‚Å‚·D
+ * Lisp ã®ãƒ—ãƒªãƒŸãƒ†ã‚£ãƒ–ã§ã‚ã‚‹ã“ã¨ã‚’ç¤ºã™ã‚¤ãƒ³ã‚¿ãƒ¼ãƒ•ã‚§ãƒ¼ã‚¹ã§ã™ï¼
  * 
- * @author <a href="mailto:vavivavi@yahoo.co.jp">Naohide Sano</a> (nsano)
+ * @author <a href="mailto:umjammer@gmail.com">Naohide Sano</a> (nsano)
  * @version 0.00 970730 nsano make the initial version <br>
  */
 public interface LispFunction {
 
     /**
-     * ƒvƒŠƒ~ƒeƒBƒu‚ğ•]‰¿‚µ‚Ü‚·D
+     * ãƒ—ãƒªãƒŸãƒ†ã‚£ãƒ–ã‚’è©•ä¾¡ã—ã¾ã™ï¼
      * 
      * @param args arguments list
      * @param interp the lisp interpreter

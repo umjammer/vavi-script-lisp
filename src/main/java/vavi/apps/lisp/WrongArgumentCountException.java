@@ -8,19 +8,19 @@ package vavi.apps.lisp;
 
 
 /**
- * ˆø”‚Ì”‚ªˆá‚¤ê‡‚ÉƒXƒ[‚³‚ê‚Ü‚·D
+ * å¼•æ•°ã®æ•°ãŒé•ã†å ´åˆã«ã‚¹ãƒ­ãƒ¼ã•ã‚Œã¾ã™ï¼
  * 
- * @author <a href="mailto:vavivavi@yahoo.co.jp">Naohide Sano</a> (nsano)
+ * @author <a href="mailto:umjammer@gmail.com">Naohide Sano</a> (nsano)
  * @version 0.00 970730 nsano make the initial version <br>
  */
 public final class WrongArgumentCountException extends LispException {
 
-    /** Ú×ƒƒbƒZ[ƒW‚ğ‚½‚È‚¢ WrongArgumentCountException ‚ğ\’z‚µ‚Ü‚·D */
+    /** è©³ç´°ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã‚’æŒãŸãªã„ WrongArgumentCountException ã‚’æ§‹ç¯‰ã—ã¾ã™ï¼ */
     public WrongArgumentCountException() {
         super();
     }
 
-    /** Ú×ƒƒbƒZ[ƒW‚ğ‚Â WrongArgumentCountException ‚ğ\’z‚µ‚Ü‚·D */
+    /** è©³ç´°ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã‚’æŒã¤ WrongArgumentCountException ã‚’æ§‹ç¯‰ã—ã¾ã™ï¼ */
     public WrongArgumentCountException(String s) {
         super(s);
     }

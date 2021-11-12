@@ -11,21 +11,21 @@ package vavi.apps.lisp;
 
 
 /**
- * S ®‚ª³‚µ‚­I—¹‚µ‚Ä‚¢‚È‚¢ê‡‚ÉƒXƒ[‚³‚ê‚Ü‚·D
+ * S å¼ãŒæ­£ã—ãçµ‚äº†ã—ã¦ã„ãªã„å ´åˆã«ã‚¹ãƒ­ãƒ¼ã•ã‚Œã¾ã™ï¼
  * 
- * @author <a href="mailto:vavivavi@yahoo.co.jp">Naohide Sano</a> (nsano)
+ * @author <a href="mailto:umjammer@gmail.com">Naohide Sano</a> (nsano)
  * @version 0.00 970730 nsano make the initial version <br>
  */
 public final class IncompleteExpressionException extends LispException {
 
     /**
-     * Ú×ƒƒbƒZ[ƒW‚ğ‚½‚È‚¢ IncompleteExpressionException ‚ğ\’z‚µ‚Ü‚·D
+     * è©³ç´°ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã‚’æŒãŸãªã„ IncompleteExpressionException ã‚’æ§‹ç¯‰ã—ã¾ã™ï¼
      */
     public IncompleteExpressionException() {
         super();
     }
 
-    /** Ú×ƒƒbƒZ[ƒW‚ğ‚Â IncompleteExpressionException ‚ğ\’z‚µ‚Ü‚·D */
+    /** è©³ç´°ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã‚’æŒã¤ IncompleteExpressionException ã‚’æ§‹ç¯‰ã—ã¾ã™ï¼ */
     public IncompleteExpressionException(String s) {
         super(s);
     }

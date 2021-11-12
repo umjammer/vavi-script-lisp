@@ -15,13 +15,13 @@ import vavi.apps.lisp.LispPrimitive;
 /**
  * This class processes the primitive of <i>+</i>.
  * 
- * @author <a href="mailto:vavivavi@yahoo.co.jp">Naohide Sano</a> (nsano)
+ * @author <a href="mailto:umjammer@gmail.com">Naohide Sano</a> (nsano)
  * @version 0.00 970730 nsano make the initial version <br>
  */
 public final class LispPlusFun extends LispPrimitive {
 
     /**
-     * ‘«‚µZ‚ğs‚¢‚Ü‚·D
+     * è¶³ã—ç®—ã‚’è¡Œã„ã¾ã™ï¼
      * <p>
      * <tt>
      * (+ <i>number1</i> <i>number2</i> [<i>number3</i> ...])

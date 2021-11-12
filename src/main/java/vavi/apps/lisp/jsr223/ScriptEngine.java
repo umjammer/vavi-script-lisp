@@ -28,7 +28,7 @@ import vavi.apps.lisp.LispInterpreter;
 /**
  * ScriptEngine.
  * 
- * @author <a href="mailto:vavivavi@yahoo.co.jp">Naohide Sano</a> (nsano)
+ * @author <a href="mailto:umjammer@gmail.com">Naohide Sano</a> (nsano)
  * @version 0.00 080602 nsano make the initial version <br>
  */
 public class ScriptEngine implements javax.script.ScriptEngine {

@@ -8,20 +8,20 @@ package vavi.apps.lisp;
 
 
 /**
- * ˆø”‚ÌŒ^‚ª‡‚í‚È‚¢ê‡‚ÉƒXƒ[‚³‚ê‚Ü‚·D
+ * å¼•æ•°ã®å‹ãŒåˆã‚ãªã„å ´åˆã«ã‚¹ãƒ­ãƒ¼ã•ã‚Œã¾ã™ï¼
  * 
- * @author <a href="mailto:vavivavi@yahoo.co.jp">Naohide Sano</a> (nsano)
+ * @author <a href="mailto:umjammer@gmail.com">Naohide Sano</a> (nsano)
  * @version 0.00 970730 nsano make the initial version <br>
  */
 
 public final class BadArgumentTypeException extends LispException {
 
-    /** Ú×ƒƒbƒZ[ƒW‚ğ‚½‚È‚¢ BadArgumentTypeException ‚ğ\’z‚µ‚Ü‚·D */
+    /** è©³ç´°ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã‚’æŒãŸãªã„ BadArgumentTypeException ã‚’æ§‹ç¯‰ã—ã¾ã™ï¼ */
     public BadArgumentTypeException() {
         super();
     }
 
-    /** Ú×ƒƒbƒZ[ƒW‚ğ‚Â BadArgumentTypeException ‚ğ\’z‚µ‚Ü‚·D */
+    /** è©³ç´°ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã‚’æŒã¤ BadArgumentTypeException ã‚’æ§‹ç¯‰ã—ã¾ã™ï¼ */
     public BadArgumentTypeException(String s) {
         super(s);
     }

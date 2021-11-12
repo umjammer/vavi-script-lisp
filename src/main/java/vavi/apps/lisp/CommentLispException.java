@@ -10,19 +10,19 @@ package vavi.apps.lisp;
 
 
 /**
- * ƒRƒƒ“ƒg‚ğ“Ç‚ñ‚¾ê‡‚ÉƒXƒ[‚³‚ê‚Ü‚·D
+ * ã‚³ãƒ¡ãƒ³ãƒˆã‚’èª­ã‚“ã å ´åˆã«ã‚¹ãƒ­ãƒ¼ã•ã‚Œã¾ã™ï¼
  * 
- * @author <a href="mailto:vavivavi@yahoo.co.jp">Naohide Sano</a> (nsano)
+ * @author <a href="mailto:umjammer@gmail.com">Naohide Sano</a> (nsano)
  * @version 0.00 970806 nsano make the initial version <br>
  */
 public final class CommentLispException extends LispException {
 
-    /** Ú×ƒƒbƒZ[ƒW‚ğ‚½‚È‚¢ CommentLispException ‚ğ\’z‚µ‚Ü‚·D */
+    /** è©³ç´°ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã‚’æŒãŸãªã„ CommentLispException ã‚’æ§‹ç¯‰ã—ã¾ã™ï¼ */
     public CommentLispException() {
         super();
     }
 
-    /** Ú×ƒƒbƒZ[ƒW‚ğ‚Â CommentLispException ‚ğ\’z‚µ‚Ü‚·D */
+    /** è©³ç´°ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã‚’æŒã¤ CommentLispException ã‚’æ§‹ç¯‰ã—ã¾ã™ï¼ */
     public CommentLispException(String s) {
         super(s);
     }

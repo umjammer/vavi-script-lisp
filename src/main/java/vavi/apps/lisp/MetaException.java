@@ -8,25 +8,25 @@ package vavi.apps.lisp;
 
 
 /**
- * “ü‚êq‚Ì—áŠO‚ğ‚Â—áŠOƒNƒ‰ƒX‚Å‚·D
+ * å…¥ã‚Œå­ã®ä¾‹å¤–ã‚’æŒã¤ä¾‹å¤–ã‚¯ãƒ©ã‚¹ã§ã™ï¼
  * 
- * @author <a href="mailto:vavivavi@yahoo.co.jp">Naohide Sano</a> (nsano)
+ * @author <a href="mailto:umjammer@gmail.com">Naohide Sano</a> (nsano)
  * @version 0.00 991209 nsano make the initial version <br>
  */
 public final class MetaException extends LispException {
 
-    /** ÀÛ‚Ì—áŠO */
+    /** å®Ÿéš›ã®ä¾‹å¤– */
     private Throwable throwable;
 
     /**
-     * Ú×ƒƒbƒZ[ƒW‚ğ‚½‚È‚¢ MetaException ‚ğ\’z‚µ‚Ü‚·D
+     * è©³ç´°ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã‚’æŒãŸãªã„ MetaException ã‚’æ§‹ç¯‰ã—ã¾ã™ï¼
      */
     public MetaException(Throwable throwable) {
         this.throwable = throwable;
     }
 
     /**
-     * Ú×ƒƒbƒZ[ƒW‚ğ‚Â MetaException ‚ğ\’z‚µ‚Ü‚·D
+     * è©³ç´°ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã‚’æŒã¤ MetaException ã‚’æ§‹ç¯‰ã—ã¾ã™ï¼
      */
     public Throwable getThrowable() {
         return throwable;

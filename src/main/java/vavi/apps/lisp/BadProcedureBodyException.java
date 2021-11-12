@@ -8,19 +8,19 @@ package vavi.apps.lisp;
 
 
 /**
- * ƒvƒƒV[ƒWƒƒ‚Ìƒ{ƒfƒB‚ª³‚µ‚­‚È‚¢ê‡‚ÉƒXƒ[‚³‚ê‚Ü‚·D
+ * ãƒ—ãƒ­ã‚·ãƒ¼ã‚¸ãƒ£ã®ãƒœãƒ‡ã‚£ãŒæ­£ã—ããªã„å ´åˆã«ã‚¹ãƒ­ãƒ¼ã•ã‚Œã¾ã™ï¼
  * 
- * @author <a href="mailto:vavivavi@yahoo.co.jp">Naohide Sano</a> (nsano)
+ * @author <a href="mailto:umjammer@gmail.com">Naohide Sano</a> (nsano)
  * @version 0.00 970730 nsano make the initial version <br>
  */
 public final class BadProcedureBodyException extends LispException {
 
-    /** Ú×ƒƒbƒZ[ƒW‚ğ‚½‚È‚¢ BadProcedureBodyException ‚ğ\’z‚µ‚Ü‚·D */
+    /** è©³ç´°ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã‚’æŒãŸãªã„ BadProcedureBodyException ã‚’æ§‹ç¯‰ã—ã¾ã™ï¼ */
     public BadProcedureBodyException() {
         super();
     }
 
-    /** Ú×ƒƒbƒZ[ƒW‚ğ‚Â BadProcedureBodyException ‚ğ\’z‚µ‚Ü‚·D */
+    /** è©³ç´°ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã‚’æŒã¤ BadProcedureBodyException ã‚’æ§‹ç¯‰ã—ã¾ã™ï¼ */
     public BadProcedureBodyException(String s) {
         super(s);
     }

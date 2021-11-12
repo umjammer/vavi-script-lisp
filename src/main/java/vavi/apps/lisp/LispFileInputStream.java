@@ -14,7 +14,7 @@ import java.io.InputStreamReader;
 /**
  * The file input stream as lisp primitive.
  * 
- * @author <a href="mailto:vavivavi@yahoo.co.jp">Naohide Sano</a> (nsano)
+ * @author <a href="mailto:umjammer@gmail.com">Naohide Sano</a> (nsano)
  * @version 0.00 970730 nsano make the initial version <br>
  *          0.01 980130 nsano add the encoding to the reader <br>
  */

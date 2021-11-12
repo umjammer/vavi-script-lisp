@@ -11,19 +11,19 @@ package vavi.apps.lisp;
 
 
 /**
- * ‚±‚ÌƒpƒbƒP[ƒW“à‚Ì—áŠO‚ÌŠî–{ƒNƒ‰ƒX‚Å‚·D
+ * ã“ã®ãƒ‘ãƒƒã‚±ãƒ¼ã‚¸å†…ã®ä¾‹å¤–ã®åŸºæœ¬ã‚¯ãƒ©ã‚¹ã§ã™ï¼
  * 
- * @author <a href="mailto:vavivavi@yahoo.co.jp">Naohide Sano</a> (nsano)
+ * @author <a href="mailto:umjammer@gmail.com">Naohide Sano</a> (nsano)
  * @version 0.00 970730 nsano make the initial version <br>
  */
 public class LispException extends Exception {
 
-    /** Ú×ƒƒbƒZ[ƒW‚ğ‚½‚È‚¢ LispException ‚ğ\’z‚µ‚Ü‚·D */
+    /** è©³ç´°ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã‚’æŒãŸãªã„ LispException ã‚’æ§‹ç¯‰ã—ã¾ã™ï¼ */
     public LispException() {
         super();
     }
 
-    /** Ú×ƒƒbƒZ[ƒW‚ğ‚Â LispException ‚ğ\’z‚µ‚Ü‚·D */
+    /** è©³ç´°ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã‚’æŒã¤ LispException ã‚’æ§‹ç¯‰ã—ã¾ã™ï¼ */
     public LispException(String s) {
         super(s);
     }

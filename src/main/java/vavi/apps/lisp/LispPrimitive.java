@@ -10,20 +10,20 @@ import java.util.List;
 
 
 /**
- * Lisp ‚Ì®‚ÉŒ»‚ê‚éƒvƒŠƒ~ƒeƒBƒu‚ÌŠî–{ƒNƒ‰ƒX‚Å‚·B
- * ƒ†[ƒU‚ªƒvƒŠƒ~ƒeƒBƒu‚ğì¬‚·‚éê‡‚Í‚±‚ÌƒNƒ‰ƒX‚ğŠg’£‚µ‚Äg—p‚µ‚Ü‚·B
+ * Lisp ã®å¼ã«ç¾ã‚Œã‚‹ãƒ—ãƒªãƒŸãƒ†ã‚£ãƒ–ã®åŸºæœ¬ã‚¯ãƒ©ã‚¹ã§ã™ã€‚
+ * ãƒ¦ãƒ¼ã‚¶ãŒãƒ—ãƒªãƒŸãƒ†ã‚£ãƒ–ã‚’ä½œæˆã™ã‚‹å ´åˆã¯ã“ã®ã‚¯ãƒ©ã‚¹ã‚’æ‹¡å¼µã—ã¦ä½¿ç”¨ã—ã¾ã™ã€‚
  * 
- * @author <a href="mailto:vavivavi@yahoo.co.jp">Naohide Sano</a> (nsano)
+ * @author <a href="mailto:umjammer@gmail.com">Naohide Sano</a> (nsano)
  * 
  * @version 0.00 970730 nsano make the initial version <br>
  */
 public class LispPrimitive implements LispFunction, LispPrintable {
 
     /**
-     * ƒ†[ƒU‚ªì¬‚·‚éƒvƒŠƒ~ƒeƒBƒu‚Í‚±‚Ìƒƒ\ƒbƒh‚ğƒI[ƒo[ƒ‰ƒCƒh‚µ‚Ä‚­‚¾‚³‚¢B
+     * ãƒ¦ãƒ¼ã‚¶ãŒä½œæˆã™ã‚‹ãƒ—ãƒªãƒŸãƒ†ã‚£ãƒ–ã¯ã“ã®ãƒ¡ã‚½ãƒƒãƒ‰ã‚’ã‚ªãƒ¼ãƒãƒ¼ãƒ©ã‚¤ãƒ‰ã—ã¦ãã ã•ã„ã€‚
      * 
-     * @param args ®‚Ìˆø”‚ÌƒŠƒXƒgD
-     * @param interp Lisp ƒCƒ“ƒ^[ƒvƒŠƒ^‚ÌƒCƒ“ƒXƒ^ƒ“ƒXD
+     * @param args å¼ã®å¼•æ•°ã®ãƒªã‚¹ãƒˆï¼
+     * @param interp Lisp ã‚¤ãƒ³ã‚¿ãƒ¼ãƒ—ãƒªã‚¿ã®ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ï¼
      * @throws LispException If a lisp error occurs.
      */
     public Object apply(List<Object> args, LispInterpreter interp) throws LispException {
@@ -31,9 +31,9 @@ public class LispPrimitive implements LispFunction, LispPrintable {
     }
 
     /**
-     * ƒ†[ƒU‚ªì¬‚·‚éƒvƒŠƒ~ƒeƒBƒu‚Í‚±‚Ìƒƒ\ƒbƒh‚ğƒI[ƒo[ƒ‰ƒCƒh‚µ‚Ä‚­‚¾‚³‚¢B
+     * ãƒ¦ãƒ¼ã‚¶ãŒä½œæˆã™ã‚‹ãƒ—ãƒªãƒŸãƒ†ã‚£ãƒ–ã¯ã“ã®ãƒ¡ã‚½ãƒƒãƒ‰ã‚’ã‚ªãƒ¼ãƒãƒ¼ãƒ©ã‚¤ãƒ‰ã—ã¦ãã ã•ã„ã€‚
      * 
-     * @param args ®‚Ìˆø”‚ÌƒŠƒXƒgD
+     * @param args å¼ã®å¼•æ•°ã®ãƒªã‚¹ãƒˆï¼
      * @throws LispException If a lisp error occurs.
      */
     public Object apply(List<Object> args) throws LispException {
@@ -41,19 +41,19 @@ public class LispPrimitive implements LispFunction, LispPrintable {
     }
 
     /**
-     * ‚±‚ÌƒvƒŠƒ~ƒeƒBƒu‚ğ•\‚· Lisp ‚Æ‚µ‚Ä‚Ì•¶š—ñ‚ğ•Ô‚µ‚Ü‚·B
+     * ã“ã®ãƒ—ãƒªãƒŸãƒ†ã‚£ãƒ–ã‚’è¡¨ã™ Lisp ã¨ã—ã¦ã®æ–‡å­—åˆ—ã‚’è¿”ã—ã¾ã™ã€‚
      */
     public String toLispString() {
         return "{primitive}";
     }
 
     /**
-     * ®‚Ìˆø”‚Ì”‚ğ’²‚×‚Ü‚·D
+     * å¼ã®å¼•æ•°ã®æ•°ã‚’èª¿ã¹ã¾ã™ï¼
      * 
-     * @param name ƒvƒŠƒ~ƒeƒBƒu‚Ì–¼‘O
-     * @param args ˆø”‚ÌƒŠƒXƒg
-     * @param len ˆø”‚Ì”
-     * @throws WrongArgumentCountException ˆø”‚Ì”‚ªˆá‚¤ê‡
+     * @param name ãƒ—ãƒªãƒŸãƒ†ã‚£ãƒ–ã®åå‰
+     * @param args å¼•æ•°ã®ãƒªã‚¹ãƒˆ
+     * @param len å¼•æ•°ã®æ•°
+     * @throws WrongArgumentCountException å¼•æ•°ã®æ•°ãŒé•ã†å ´åˆ
      */
     public void checkArgs(String name, List<Object> args, int len) throws WrongArgumentCountException {
 

@@ -8,19 +8,19 @@ package vavi.apps.lisp;
 
 
 /**
- * ³‚µ‚­‚È‚¢ loop ‚ª”­¶‚µ‚½ê‡‚ÉƒXƒ[‚³‚ê‚Ü‚·D
+ * æ­£ã—ããªã„ loop ãŒç™ºç”Ÿã—ãŸå ´åˆã«ã‚¹ãƒ­ãƒ¼ã•ã‚Œã¾ã™ï¼
  * 
- * @author <a href="mailto:vavivavi@yahoo.co.jp">Naohide Sano</a> (nsano)
+ * @author <a href="mailto:umjammer@gmail.com">Naohide Sano</a> (nsano)
  * @version 0.00 970730 nsano make the initial version <br>
  */
 public final class BadLoopException extends LispException {
 
-    /** Ú×ƒƒbƒZ[ƒW‚ğ‚½‚È‚¢ BadLoopException ‚ğ\’z‚µ‚Ü‚·D */
+    /** è©³ç´°ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã‚’æŒãŸãªã„ BadLoopException ã‚’æ§‹ç¯‰ã—ã¾ã™ï¼ */
     public BadLoopException() {
         super();
     }
 
-    /** Ú×ƒƒbƒZ[ƒW‚ğ‚Â BadLoopException ‚ğ\’z‚µ‚Ü‚·D */
+    /** è©³ç´°ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã‚’æŒã¤ BadLoopException ã‚’æ§‹ç¯‰ã—ã¾ã™ï¼ */
     public BadLoopException(String s) {
         super(s);
     }

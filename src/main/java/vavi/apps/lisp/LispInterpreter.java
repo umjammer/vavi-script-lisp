@@ -22,9 +22,9 @@ import java.util.Map;
 
 
 /**
- * S ®‚Å•\Œ»‚³‚ê‚½•¶š—ñ‚ğƒXƒgƒŠ[ƒ€‚©‚ç“Ç‚İ‚İÀs‚·‚éƒNƒ‰ƒX‚Å‚·B ƒCƒ“ƒ^ƒ‰ƒNƒeƒBƒu‚Èƒƒ\ƒbƒh‚Æ”ñƒCƒ“ƒ^ƒ‰ƒNƒeƒBƒu‚Èƒƒ\ƒbƒh‚ª‚ ‚è‚Ü‚·D Lisp
- * ƒGƒ“ƒWƒ“‚Í Scheme ‚ğŠî‚É‚µ‚Ä‚¢‚Ü‚·D extension ‚ÉƒpƒbƒP[ƒW–¼‚ğw’è‚·‚é‚±‚Æ‚É‚æ‚èƒ†[ƒU‚ªì¬‚µ‚½ Lisp ŠÖ”‚ğ
- * LispInterpreter ‚É‘g‚İ‚Ş‚±‚Æ‚ª‰Â”\‚Å‚·D
+ * S å¼ã§è¡¨ç¾ã•ã‚ŒãŸæ–‡å­—åˆ—ã‚’ã‚¹ãƒˆãƒªãƒ¼ãƒ ã‹ã‚‰èª­ã¿è¾¼ã¿å®Ÿè¡Œã™ã‚‹ã‚¯ãƒ©ã‚¹ã§ã™ã€‚ ã‚¤ãƒ³ã‚¿ãƒ©ã‚¯ãƒ†ã‚£ãƒ–ãªãƒ¡ã‚½ãƒƒãƒ‰ã¨éã‚¤ãƒ³ã‚¿ãƒ©ã‚¯ãƒ†ã‚£ãƒ–ãªãƒ¡ã‚½ãƒƒãƒ‰ãŒã‚ã‚Šã¾ã™ï¼ Lisp
+ * ã‚¨ãƒ³ã‚¸ãƒ³ã¯ Scheme ã‚’åŸºã«ã—ã¦ã„ã¾ã™ï¼ extension ã«ãƒ‘ãƒƒã‚±ãƒ¼ã‚¸åã‚’æŒ‡å®šã™ã‚‹ã“ã¨ã«ã‚ˆã‚Šãƒ¦ãƒ¼ã‚¶ãŒä½œæˆã—ãŸ Lisp é–¢æ•°ã‚’
+ * LispInterpreter ã«çµ„ã¿è¾¼ã‚€ã“ã¨ãŒå¯èƒ½ã§ã™ï¼
  * 
  * <pre>
  *  
@@ -34,10 +34,10 @@ import java.util.Map;
  * 
  * <table border="1">
  * <tr>
- * <td bgcolor="#00FFFF">ƒVƒ“ƒ{ƒ‹</td>
- * <td bgcolor="#00FFFF">à–¾</td>
- * <td bgcolor="#00FFFF">–ß‚è’l</td>
- * <td bgcolor="#00FFFF">S ®</td>
+ * <td bgcolor="#00FFFF">ã‚·ãƒ³ãƒœãƒ«</td>
+ * <td bgcolor="#00FFFF">èª¬æ˜</td>
+ * <td bgcolor="#00FFFF">æˆ»ã‚Šå€¤</td>
+ * <td bgcolor="#00FFFF">S å¼</td>
  * </tr>
  * <tr>
  * <td bgcolor="#FFFFCC" colspan="4">Special Forms</td>
@@ -203,77 +203,77 @@ import java.util.Map;
  * </tr>
  * <tr>
  * <td>catch</td>
- * <td>—áŠOˆ—</td>
+ * <td>ä¾‹å¤–å‡¦ç†</td>
  * <td> </td>
  * <td> </td>
  * </tr>
  * <tr>
  * <td>throw</td>
- * <td>—áŠO”­¶</td>
+ * <td>ä¾‹å¤–ç™ºç”Ÿ</td>
  * <td> </td>
  * <td> </td>
  * </tr>
  * <tr>
  * <td>+</td>
- * <td>‘«‚µZ</td>
+ * <td>è¶³ã—ç®—</td>
  * <td> </td>
  * <td>(+ number number ...)</td>
  * </tr>
  * <tr>
  * <td>*</td>
- * <td>Š|‚¯Z</td>
+ * <td>æ›ã‘ç®—</td>
  * <td> </td>
  * <td>(* number number ...)</td>
  * </tr>
  * <tr>
  * <td>-</td>
- * <td>ˆø‚«Z</td>
+ * <td>å¼•ãç®—</td>
  * <td> </td>
  * <td> </td>
  * </tr>
  * <tr>
  * <td>/</td>
- * <td>Š„‚èZ</td>
+ * <td>å‰²ã‚Šç®—</td>
  * <td> </td>
  * <td> </td>
  * </tr>
  * <tr>
  * <td>=</td>
- * <td>ƒCƒR[ƒ‹</td>
+ * <td>ã‚¤ã‚³ãƒ¼ãƒ«</td>
  * <td> </td>
  * <td> </td>
  * </tr>
  * <tr>
  * <td>&lt;</td>
- * <td>‚æ‚è¬‚³‚¢</td>
+ * <td>ã‚ˆã‚Šå°ã•ã„</td>
  * <td> </td>
  * <td> </td>
  * </tr>
  * <tr>
  * <td>&gt;</td>
- * <td>‚æ‚è‘å‚«‚¢</td>
+ * <td>ã‚ˆã‚Šå¤§ãã„</td>
  * <td> </td>
  * <td> </td>
  * </tr>
  * <tr>
  * <td>&lt;=</td>
- * <td>ˆÈ‰º</td>
+ * <td>ä»¥ä¸‹</td>
  * <td> </td>
  * <td> </td>
  * </tr>
  * <tr>
  * <td>&gt;=</td>
- * <td>ˆÈã</td>
+ * <td>ä»¥ä¸Š</td>
  * <td> </td>
  * <td> </td>
  * </tr>
  * </table>
  * 
  * <p>
- * ƒRƒƒ“ƒg‚Í ; ‚Ån‚Ü‚ès––‚Ü‚ÅƒRƒƒ“ƒg‚Æ‚İ‚È‚³‚ê‚éD
+ * ã‚³ãƒ¡ãƒ³ãƒˆã¯ ; ã§å§‹ã¾ã‚Šè¡Œæœ«ã¾ã§ã‚³ãƒ¡ãƒ³ãƒˆã¨ã¿ãªã•ã‚Œã‚‹ï¼
  * 
  * @see LispPrimitive
- * @author <a href="mailto:vavivavi@yahoo.co.jp">Naohide Sano</a> (nsano)
+ * @author <a href="mailto:umjammer@gmail.com">Naohide Sano</a> (nsano)
  * @version 0.00 970730 nsano make the initial version <br>
  *          1.01 971020 nsano refine <br>
  *          1.02 971025 nsano deprecate setEncoding() <br>
@@ -286,22 +286,22 @@ import java.util.Map;
  */
 public final class LispInterpreter {
 
-    /** ‚±‚ÌƒNƒ‰ƒX‚ÌƒpƒbƒP[ƒW–¼‚Ìƒx[ƒX–¼ */
+    /** ã“ã®ã‚¯ãƒ©ã‚¹ã®ãƒ‘ãƒƒã‚±ãƒ¼ã‚¸åã®ãƒ™ãƒ¼ã‚¹å */
     private static final String rootPath = "vavi.apps.lisp";
 
-    /** ƒfƒtƒHƒ‹ƒgƒvƒŠƒ~ƒeƒBƒu‚ÌƒpƒbƒP[ƒW–¼‚Ìƒx[ƒX–¼ */
+    /** ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆãƒ—ãƒªãƒŸãƒ†ã‚£ãƒ–ã®ãƒ‘ãƒƒã‚±ãƒ¼ã‚¸åã®ãƒ™ãƒ¼ã‚¹å */
     private static final String primitivePath = rootPath + "." + "prim";
 
-    /** ƒfƒtƒHƒ‹ƒg‚ÌŠg’£ƒvƒŠƒ~ƒeƒBƒu‚ÌƒpƒbƒP[ƒW–¼‚Ìƒx[ƒX–¼ */
+    /** ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã®æ‹¡å¼µãƒ—ãƒªãƒŸãƒ†ã‚£ãƒ–ã®ãƒ‘ãƒƒã‚±ãƒ¼ã‚¸åã®ãƒ™ãƒ¼ã‚¹å */
     private static final String defaultPath = rootPath + "." + "extend";
 
-    /** Šg’£ƒvƒŠƒ~ƒeƒBƒu‚ÌƒNƒ‰ƒX‚ª‚ ‚éƒpƒbƒP[ƒW–¼ */
+    /** æ‹¡å¼µãƒ—ãƒªãƒŸãƒ†ã‚£ãƒ–ã®ã‚¯ãƒ©ã‚¹ãŒã‚ã‚‹ãƒ‘ãƒƒã‚±ãƒ¼ã‚¸å */
     private String extentionPath;
 
-    /** ƒGƒ“ƒR[ƒfƒBƒ“ƒO */
+    /** ã‚¨ãƒ³ã‚³ãƒ¼ãƒ‡ã‚£ãƒ³ã‚° */
     private String encoding;
 
-    /** ƒfƒtƒHƒ‹ƒg‚ÌƒGƒ“ƒR[ƒfƒBƒ“ƒO */
+    /** ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã®ã‚¨ãƒ³ã‚³ãƒ¼ãƒ‡ã‚£ãƒ³ã‚° */
     private static final String defaultEncoding = System.getProperty("file.encoding");
 
     /**
@@ -599,16 +599,16 @@ public final class LispInterpreter {
         evaluator = new LispEvaluator(path);
     }
 
-    /** ƒVƒ“ƒ{ƒ‹‚Ìƒe[ƒuƒ‹ */
+    /** ã‚·ãƒ³ãƒœãƒ«ã®ãƒ†ãƒ¼ãƒ–ãƒ« */
     private Map<String, LispSymbol> symbols = new HashMap<String, LispSymbol>();
 
-    /** ŠÂ‹« */
+    /** ç’°å¢ƒ */
     private LispEnv environment = new LispEnv();
 
-    /** ƒŠ[ƒ_ */
+    /** ãƒªãƒ¼ãƒ€ */
     private LispReader reader;
 
-    /** •]‰¿ƒGƒ“ƒWƒ“ */
+    /** è©•ä¾¡ã‚¨ãƒ³ã‚¸ãƒ³ */
     private LispEvaluator evaluator;
 
     /**

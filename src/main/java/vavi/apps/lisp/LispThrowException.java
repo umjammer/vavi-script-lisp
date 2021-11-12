@@ -8,9 +8,9 @@ package vavi.apps.lisp;
 
 
 /**
- * LispThrow ƒvƒŠƒ~ƒeƒBƒu‚ğˆ—‚µ‚½ê‡‚ÉƒXƒ[‚³‚ê‚Ü‚·D
+ * LispThrow ãƒ—ãƒªãƒŸãƒ†ã‚£ãƒ–ã‚’å‡¦ç†ã—ãŸå ´åˆã«ã‚¹ãƒ­ãƒ¼ã•ã‚Œã¾ã™ï¼
  * 
- * @author <a href="mailto:vavivavi@yahoo.co.jp">Naohide Sano</a> (nsano)
+ * @author <a href="mailto:umjammer@gmail.com">Naohide Sano</a> (nsano)
  * @version 0.00 970730 nsano make the initial version <br>
  */
 public final class LispThrowException extends LispException {

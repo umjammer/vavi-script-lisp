@@ -13,7 +13,7 @@ import java.util.List;
 /**
  * This class processes <i>apply</i>.
  * 
- * @author <a href="mailto:vavivavi@yahoo.co.jp">Naohide Sano</a> (nsano)
+ * @author <a href="mailto:umjammer@gmail.com">Naohide Sano</a> (nsano)
  * @version 0.00 970730 nsano make the initial version <br>
  */
 public final class ApplySpecialForm extends LispSpecialForm {

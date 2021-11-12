@@ -8,19 +8,19 @@ package vavi.apps.lisp;
 
 
 /**
- * ApplySpecialForm ‚Å—áŠO‚ª”­¶‚µ‚½ê‡‚ÉƒXƒ[‚³‚ê‚Ü‚·B
+ * ApplySpecialForm ã§ä¾‹å¤–ãŒç™ºç”Ÿã—ãŸå ´åˆã«ã‚¹ãƒ­ãƒ¼ã•ã‚Œã¾ã™ã€‚
  * 
- * @author <a href="mailto:vavivavi@yahoo.co.jp">Naohide Sano</a> (nsano)
+ * @author <a href="mailto:umjammer@gmail.com">Naohide Sano</a> (nsano)
  * @version 0.00 970730 nsano make the initial version <br>
  */
 public final class BadApplyArgumentsException extends LispException {
 
-    /** Ú×ƒƒbƒZ[ƒW‚ğ‚½‚È‚¢ BadApplyArgumentsException ‚ğ\’z‚µ‚Ü‚·B */
+    /** è©³ç´°ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã‚’æŒãŸãªã„ BadApplyArgumentsException ã‚’æ§‹ç¯‰ã—ã¾ã™ã€‚ */
     public BadApplyArgumentsException() {
         super();
     }
 
-    /** Ú×ƒƒbƒZ[ƒW‚ğ‚Â BadApplyArgumentsException ‚ğ\’z‚µ‚Ü‚·B */
+    /** è©³ç´°ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã‚’æŒã¤ BadApplyArgumentsException ã‚’æ§‹ç¯‰ã—ã¾ã™ã€‚ */
     public BadApplyArgumentsException(String s) {
         super(s);
     }

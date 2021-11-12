@@ -11,21 +11,21 @@ package vavi.apps.lisp;
 
 
 /**
- * ƒVƒ“ƒ^ƒbƒNƒX‚ÉŠÔˆá‚¢‚ª‚ ‚Á‚½ê‡‚ÉƒXƒ[‚³‚ê‚Ü‚·D
+ * ã‚·ãƒ³ã‚¿ãƒƒã‚¯ã‚¹ã«é–“é•ã„ãŒã‚ã£ãŸå ´åˆã«ã‚¹ãƒ­ãƒ¼ã•ã‚Œã¾ã™ï¼
  * 
- * @author <a href="mailto:vavivavi@yahoo.co.jp">Naohide Sano</a> (nsano)
+ * @author <a href="mailto:umjammer@gmail.com">Naohide Sano</a> (nsano)
  * @version 0.00 970730 nsano make the initial version <br>
  */
 public final class InvalidLispExpressionException extends LispException {
 
     /**
-     * Ú×ƒƒbƒZ[ƒW‚ğ‚½‚È‚¢ InvalidLispExpressionException ‚ğ\’z‚µ‚Ü‚·D
+     * è©³ç´°ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã‚’æŒãŸãªã„ InvalidLispExpressionException ã‚’æ§‹ç¯‰ã—ã¾ã™ï¼
      */
     public InvalidLispExpressionException() {
         super();
     }
 
-    /** Ú×ƒƒbƒZ[ƒW‚ğ‚Â InvalidLispExpressionException ‚ğ\’z‚µ‚Ü‚·D */
+    /** è©³ç´°ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã‚’æŒã¤ InvalidLispExpressionException ã‚’æ§‹ç¯‰ã—ã¾ã™ï¼ */
     public InvalidLispExpressionException(String s) {
         super(s);
     }

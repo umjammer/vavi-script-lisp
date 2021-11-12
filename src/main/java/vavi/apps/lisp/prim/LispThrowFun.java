@@ -19,13 +19,13 @@ import vavi.apps.lisp.WrongArgumentCountException;
 /**
  * This class processes the primitive of <i>throw</i>.
  * 
- * @author <a href="mailto:vavivavi@yahoo.co.jp">Naohide Sano</a> (nsano)
+ * @author <a href="mailto:umjammer@gmail.com">Naohide Sano</a> (nsano)
  * @version 0.00 970730 nsano make the initial version <br>
  */
 public final class LispThrowFun extends LispPrimitive {
 
     /**
-     * —áŠO‚ğƒXƒ[‚µ‚Ü‚·D
+     * ä¾‹å¤–ã‚’ã‚¹ãƒ­ãƒ¼ã—ã¾ã™ï¼
      * <p>
      * <tt>
      * (throw <i>symbol</i>)

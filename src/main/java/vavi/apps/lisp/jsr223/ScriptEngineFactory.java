@@ -14,7 +14,7 @@ import java.util.List;
 /**
  * ScriptEngineFactory.
  * 
- * @author <a href="mailto:vavivavi@yahoo.co.jp">Naohide Sano</a> (nsano)
+ * @author <a href="mailto:umjammer@gmail.com">Naohide Sano</a> (nsano)
  * @version 0.00 080602 nsano make the initial version <br>
  */
 public class ScriptEngineFactory implements javax.script.ScriptEngineFactory {
