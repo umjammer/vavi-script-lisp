@@ -6,7 +6,13 @@ import javax.script.ScriptEngine;
 import javax.script.ScriptEngineFactory;
 import javax.script.ScriptEngineManager;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+
+import vavi.apps.lisp.LispBoolean;
+
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.fail;
 
 
 /**
@@ -18,9 +24,10 @@ public class ScriptEngineTest {
     public void test1() throws Exception {
         ScriptEngineManager sem = new ScriptEngineManager();
         List<ScriptEngineFactory> list = sem.getEngineFactories();
-        ScriptEngineFactory f;
+
         for (int i = 0; i < list.size(); i++) {
-            f = list.get(i);
+            ScriptEngineFactory f = list.get(i);
+
             String engineName = f.getEngineName();
             String engineVersion = f.getEngineVersion();
             String langName = f.getLanguageName();
@@ -29,20 +36,34 @@ public class ScriptEngineTest {
                     engineVersion + " (" +
                     langName + " " +
                     langVersion + ")");
+
             String statement = null;
+            Object expect = null;
+
             if (engineName.equals("Mozilla Rhino")) {
                 statement = f.getOutputStatement("\"hello, world\"");
+                expect = "hello, world";
             } else if (engineName.equals("Vavi Lisp")) {
                 statement = f.getOutputStatement("(+ 1 1)");
+                expect = new Object[] { LispBoolean.trueValue };
+            } else if (engineName.equals("Oracle Nashorn")) {
+                statement = f.getOutputStatement("\"hello, world\"");
+            } else {
+                fail("no suitable script engine");;
             }
-            System.out.println(statement);
+            System.out.println("statement: " + statement);
+
             ScriptEngine e = f.getScriptEngine();
-            e.eval(statement);
+            Object actual = e.eval(statement);
+            if (actual instanceof List) {
+                assertArrayEquals((Object[]) expect, ((List<?>) actual).toArray());
+            } else {
+                assertEquals(expect, actual);
+            }
         }
     }
 
     @Test
-    @SuppressWarnings("unchecked")
     public void test2() throws Exception {
         ScriptEngineManager sem = new ScriptEngineManager();
         ScriptEngine engine = sem.getEngineByName("lisp");
@@ -71,10 +92,11 @@ public class ScriptEngineTest {
             "    (* n (factorial (- n 1)))))" +
 
             "(factorial 10)";
-        List<Object> results = (List<Object>) engine.eval(statement);
-        for (Object result : results) {
-            System.out.println(result);
+        Object[] actuals = ((List<?>) engine.eval(statement)).toArray();
+        for (Object actual : actuals) {
+            System.out.println(actual);
         }
+        assertEquals(3628800, actuals[4]);
     }
 }
 
