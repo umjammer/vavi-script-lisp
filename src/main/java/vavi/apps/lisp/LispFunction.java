@@ -10,16 +10,16 @@ import java.util.List;
 
 
 /**
- * Lisp のプリミティブであることを示すインターフェースです．
- * 
+ * Represents a Lisp primitive.
+ *
  * @author <a href="mailto:umjammer@gmail.com">Naohide Sano</a> (nsano)
  * @version 0.00 970730 nsano make the initial version <br>
  */
 public interface LispFunction {
 
     /**
-     * プリミティブを評価します．
-     * 
+     * Evaluate this primitive.
+     *
      * @param args arguments list
      * @param interp the lisp interpreter
      * @throws LispException If a lisp error occurs

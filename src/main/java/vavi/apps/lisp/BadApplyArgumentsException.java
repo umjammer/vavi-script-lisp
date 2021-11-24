@@ -8,19 +8,19 @@ package vavi.apps.lisp;
 
 
 /**
- * ApplySpecialForm で例外が発生した場合にスローされます。
- * 
+ * Thrown if an exception cause at {@link ApplySpecialForm}.
+ *
  * @author <a href="mailto:umjammer@gmail.com">Naohide Sano</a> (nsano)
  * @version 0.00 970730 nsano make the initial version <br>
  */
 public final class BadApplyArgumentsException extends LispException {
 
-    /** 詳細メッセージを持たない BadApplyArgumentsException を構築します。 */
+    /** Creates {@link BadApplyArgumentsException} w/o message. */
     public BadApplyArgumentsException() {
         super();
     }
 
-    /** 詳細メッセージを持つ BadApplyArgumentsException を構築します。 */
+    /** Constructs a new {@link BadApplyArgumentsException} with the specified detail message. */
     public BadApplyArgumentsException(String s) {
         super(s);
     }

@@ -10,20 +10,20 @@ import java.util.List;
 
 
 /**
- * Lisp の式に現れるプリミティブの基本クラスです。
- * ユーザがプリミティブを作成する場合はこのクラスを拡張して使用します。
- * 
+ * The base class for a primitive seen in the Lisp expression.
+ * If you creates a primitive, extend this class.
+ *
  * @author <a href="mailto:umjammer@gmail.com">Naohide Sano</a> (nsano)
- * 
+ *
  * @version 0.00 970730 nsano make the initial version <br>
  */
 public class LispPrimitive implements LispFunction, LispPrintable {
 
     /**
-     * ユーザが作成するプリミティブはこのメソッドをオーバーライドしてください。
-     * 
-     * @param args 式の引数のリスト．
-     * @param interp Lisp インタープリタのインスタンス．
+     * Overrides this method for an user created primitive.
+     *
+     * @param args arguments list for an expression
+     * @param interp Lisp instance of interpreter
      * @throws LispException If a lisp error occurs.
      */
     public Object apply(List<Object> args, LispInterpreter interp) throws LispException {
@@ -31,9 +31,9 @@ public class LispPrimitive implements LispFunction, LispPrintable {
     }
 
     /**
-     * ユーザが作成するプリミティブはこのメソッドをオーバーライドしてください。
-     * 
-     * @param args 式の引数のリスト．
+     * Overrides this method for an user created primitive.
+     *
+     * @param args arguments list for an expression
      * @throws LispException If a lisp error occurs.
      */
     public Object apply(List<Object> args) throws LispException {
@@ -41,19 +41,19 @@ public class LispPrimitive implements LispFunction, LispPrintable {
     }
 
     /**
-     * このプリミティブを表す Lisp としての文字列を返します。
+     * Returns a string represents this primitive as Lisp.
      */
     public String toLispString() {
         return "{primitive}";
     }
 
     /**
-     * 式の引数の数を調べます．
-     * 
-     * @param name プリミティブの名前
-     * @param args 引数のリスト
-     * @param len 引数の数
-     * @throws WrongArgumentCountException 引数の数が違う場合
+     * number of arguments of a expression.
+     *
+     * @param name name of a primitive
+     * @param args arguments list for an expression
+     * @param len count of arguments
+     * @throws WrongArgumentCountException when arguments count is different.
      */
     public void checkArgs(String name, List<Object> args, int len) throws WrongArgumentCountException {
 

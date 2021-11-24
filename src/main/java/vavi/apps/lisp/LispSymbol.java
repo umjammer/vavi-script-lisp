@@ -14,7 +14,7 @@ import java.util.Map;
 
 /**
  * This class implements a model of lisp symbol.
- * 
+ *
  * @author <a href="mailto:umjammer@gmail.com">Naohide Sano</a> (nsano)
  * @version 0.00 970730 nsano make the initial version <br>
  */
@@ -22,7 +22,7 @@ public final class LispSymbol {
 
     /**
      * Creates a lisp symbol which value is null.
-     * 
+     *
      * @param s the symbol name
      */
     public LispSymbol(String s) {
@@ -32,7 +32,7 @@ public final class LispSymbol {
 
     /**
      * If a symbol is found in the hash table, returns the symbol, else adds a lisp symbol to the hash table.
-     * 
+     *
      * @param h the hash table of lisp symbols
      * @param s the symbol name
      */
@@ -50,7 +50,7 @@ public final class LispSymbol {
 
     /**
      * Gets the value of this symbol.
-     * 
+     *
      * @return the symbol value
      */
     public Object localValue() {
@@ -59,7 +59,7 @@ public final class LispSymbol {
 
     /**
      * Sets the value of this symbol
-     * 
+     *
      * @param val the symbol value
      */
     public void setLocalValue(Object val) {
@@ -68,7 +68,7 @@ public final class LispSymbol {
 
     /**
      * Gets the name of this symbol
-     * 
+     *
      * @return the symbol name
      */
     public String getName() {

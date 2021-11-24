@@ -19,7 +19,7 @@ import static org.junit.jupiter.api.Assertions.fail;
  * add $DIR/META-INF/services to CLASSPATH 
  */
 public class ScriptEngineTest {
-    
+
     @Test
     public void test1() throws Exception {
         ScriptEngineManager sem = new ScriptEngineManager();
@@ -85,7 +85,7 @@ public class ScriptEngineTest {
             "        result" +
             "        (reverse-aux (cdr x) (cons (car x) result))))" +
             "  (reverse-aux l ()))" +
-            
+
             "(define (factorial n)" +
             "  (if (<= n 1)" +
             "      1" +

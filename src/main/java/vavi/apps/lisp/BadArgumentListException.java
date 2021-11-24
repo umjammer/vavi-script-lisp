@@ -8,8 +8,8 @@ package vavi.apps.lisp;
 
 
 /**
- * 引数のリストが正しくない場合にスローされます。
- * 
+ * Thrown when argument list is wrong.
+ *
  * @author <a href="mailto:umjammer@gmail.com">Naohide Sano</a> (nsano)
  * @version 0.00 970730 nsano make the initial version <br>
  */
@@ -20,7 +20,7 @@ public final class BadArgumentListException extends LispException {
         super();
     }
 
-    /** 詳細メッセージを持つ BadArgumentListException を構築します。 */
+    /** Constructs a new {@link BadArgumentListException} with the specified detail message. */
     public BadArgumentListException(String s) {
         super(s);
     }

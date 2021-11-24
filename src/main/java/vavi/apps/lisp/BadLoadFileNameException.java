@@ -8,19 +8,19 @@ package vavi.apps.lisp;
 
 
 /**
- * 読みこむファイル名が正しくない場合にスローされます．
- * 
+ * Thrown when a file to read is wrong.
+ *
  * @author <a href="mailto:umjammer@gmail.com">Naohide Sano</a> (nsano)
  * @version 0.00 970730 nsano make the initial version <br>
  */
 public final class BadLoadFileNameException extends LispException {
 
-    /** 詳細メッセージを持たない BadLoadFileNameException を構築します． */
+    /** Creates {@link BadLoadFileNameException} without message. */
     public BadLoadFileNameException() {
         super();
     }
 
-    /** 詳細メッセージを持つ BadLoadFileNameException を構築します． */
+    /** Constructs a new {@link BadLoadFileNameException} with the specified detail message. */
     public BadLoadFileNameException(String s) {
         super(s);
     }

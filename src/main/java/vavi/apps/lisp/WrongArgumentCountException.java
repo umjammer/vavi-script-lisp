@@ -8,19 +8,19 @@ package vavi.apps.lisp;
 
 
 /**
- * 引数の数が違う場合にスローされます．
- * 
+ * Thrown when the arguments count is wrong.
+ *
  * @author <a href="mailto:umjammer@gmail.com">Naohide Sano</a> (nsano)
  * @version 0.00 970730 nsano make the initial version <br>
  */
 public final class WrongArgumentCountException extends LispException {
 
-    /** 詳細メッセージを持たない WrongArgumentCountException を構築します． */
+    /** Creates {@link WrongArgumentCountException} without message. */
     public WrongArgumentCountException() {
         super();
     }
 
-    /** 詳細メッセージを持つ WrongArgumentCountException を構築します． */
+    /** Constructs a new {@link WrongArgumentCountException} with the specified detail message. */
     public WrongArgumentCountException(String s) {
         super(s);
     }

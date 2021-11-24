@@ -11,19 +11,19 @@ package vavi.apps.lisp;
 
 
 /**
- * exit プリミティブを処理した場合にスローされます．
- * 
+ * Thrown when the exit primitive is processed.
+ *
  * @author <a href="mailto:umjammer@gmail.com">Naohide Sano</a> (nsano)
  * @version 0.00 970730 nsano make the initial version <br>
  */
 public final class ExitLispException extends LispException {
 
-    /** 詳細メッセージを持たない ExitLispException を構築します． */
+    /** Creates {@link ExitLispException} without message. */
     public ExitLispException() {
         super();
     }
 
-    /** 詳細メッセージを持つ ExitLispException を構築します． */
+    /** Constructs a new {@link ExitLispException} with the specified detail message. */
     public ExitLispException(String s) {
         super(s);
     }

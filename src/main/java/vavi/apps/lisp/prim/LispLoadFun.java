@@ -29,7 +29,7 @@ import vavi.apps.lisp.WrongArgumentCountException;
 
 /**
  * This class processes the primitive of <i>load</i>.
- * 
+ *
  * @author <a href="mailto:umjammer@gmail.com">Naohide Sano</a> (nsano)
  * @version 0.00 970730 nsano make the initial version <br>
  *          1.00 980123 nsano change filename to InputStream <br>
@@ -44,7 +44,7 @@ public final class LispLoadFun extends LispPrimitive {
      * (load <i>InputStream</i>)
      * </tt>
      * <p>
-     * 
+     *
      * @param args arguments
      * @param interp the lisp interpreter
      * @throws BadArgumentTypeException If a bad argument exists

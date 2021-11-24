@@ -9,16 +9,16 @@ package vavi.apps.lisp;
 
 /**
  * This class processes <i>if</i>.
- * 
+ *
  * @author <a href="mailto:umjammer@gmail.com">Naohide Sano</a> (nsano)
- * 
+ *
  * @version 0.00 970730 nsano make the initial version <br>
  */
 public final class IfSpecialForm extends LispSpecialForm {
 
     /**
      * Evaluates "if" special form.
-     * 
+     *
      * @param exp S expression
      * @param env lisp environment
      * @param interp the lisp interpreter

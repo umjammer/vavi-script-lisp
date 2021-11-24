@@ -26,7 +26,7 @@ import vavi.apps.lisp.WrongArgumentCountException;
 
 /**
  * This class processes the primitive of <i>read</i>.
- * 
+ *
  * @author <a href="mailto:umjammer@gmail.com">Naohide Sano</a> (nsano)
  * @version 0.00 970730 nsano make the initial version <br>
  */
@@ -39,7 +39,7 @@ public final class LispReadFun extends LispPrimitive {
      * (read <i>target</i>)
      * </tt>
      * <p>
-     * 
+     *
      * @param args arguments
      * @param interp the lisp interpreter
      * @throws WrongArgumentCountException If argument count is wrong

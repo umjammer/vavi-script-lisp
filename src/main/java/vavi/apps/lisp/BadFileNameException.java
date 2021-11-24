@@ -8,19 +8,19 @@ package vavi.apps.lisp;
 
 
 /**
- * ファイル名が正しくない場合にスローされます．
- * 
+ * Thrown when the file name is wrong.
+ *
  * @author <a href="mailto:umjammer@gmail.com">Naohide Sano</a> (nsano)
  * @version 0.00 970730 nsano make the initial version <br>
  */
 public final class BadFileNameException extends LispException {
 
-    /** 詳細メッセージを持たない BadFileNameException を構築します． */
+    /** Creates {@link BadFileNameException} without message. */
     public BadFileNameException() {
         super();
     }
 
-    /** 詳細メッセージを持つ BadFileNameException を構築します． */
+    /** Constructs a new {@link BadFileNameException} with the specified detail message. */
     public BadFileNameException(String s) {
         super(s);
     }

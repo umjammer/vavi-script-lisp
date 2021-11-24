@@ -11,21 +11,21 @@ package vavi.apps.lisp;
 
 
 /**
- * S 式が正しく終了していない場合にスローされます．
- * 
+ * When a S expression is ended correctly.
+ *
  * @author <a href="mailto:umjammer@gmail.com">Naohide Sano</a> (nsano)
  * @version 0.00 970730 nsano make the initial version <br>
  */
 public final class IncompleteExpressionException extends LispException {
 
     /**
-     * 詳細メッセージを持たない IncompleteExpressionException を構築します．
+     * Creates {@link IncompleteExpressionException} without message.
      */
     public IncompleteExpressionException() {
         super();
     }
 
-    /** 詳細メッセージを持つ IncompleteExpressionException を構築します． */
+    /** Constructs a new {@link IncompleteExpressionException} with the specified detail message. */
     public IncompleteExpressionException(String s) {
         super(s);
     }

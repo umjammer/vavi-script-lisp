@@ -19,7 +19,7 @@ import vavi.apps.lisp.WrongArgumentCountException;
 
 /**
  * This class processes the primitive of <i>close</i>.
- * 
+ *
  * @author <a href="mailto:umjammer@gmail.com">Naohide Sano</a> (nsano)
  * @version 0.00 970730 nsano make the initial version <br>
  */
@@ -32,7 +32,7 @@ public final class LispCloseFun extends LispPrimitive {
      * (close <i>stream</i>)
      * </tt>
      * <p>
-     * 
+     *
      * @param args arguments
      * @param interp the lisp interpreter
      * @throws BadArgumentTypeException If a bad type argument exists

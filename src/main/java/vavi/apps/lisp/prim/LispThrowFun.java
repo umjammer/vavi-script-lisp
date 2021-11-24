@@ -18,7 +18,7 @@ import vavi.apps.lisp.WrongArgumentCountException;
 
 /**
  * This class processes the primitive of <i>throw</i>.
- * 
+ *
  * @author <a href="mailto:umjammer@gmail.com">Naohide Sano</a> (nsano)
  * @version 0.00 970730 nsano make the initial version <br>
  */
@@ -31,7 +31,7 @@ public final class LispThrowFun extends LispPrimitive {
      * (throw <i>symbol</i>)
      * </tt>
      * <p>
-     * 
+     *
      * @param args arguments
      * @param interp the lisp interpreter
      * @throws BadArgumentTypeException If bad argument are exist

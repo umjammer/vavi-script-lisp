@@ -18,7 +18,7 @@ import vavi.apps.lisp.WrongArgumentCountException;
 
 /**
  * This class processes the primitive of <i>eval</i>.
- * 
+ *
  * @author <a href="mailto:umjammer@gmail.com">Naohide Sano</a> (nsano)
  * @version 0.00 970730 nsano make the initial version <br>
  */
@@ -31,7 +31,7 @@ public final class LispEvalFun extends LispPrimitive {
      * (eval argment1 argment2)
      * </tt>
      * <p>
-     * 
+     *
      * @param args arguments
      * @param interp the lisp interpreter
      * @throws WrongArgumentCountException If the argument count is wrong

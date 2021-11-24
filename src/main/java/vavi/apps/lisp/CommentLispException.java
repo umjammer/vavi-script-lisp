@@ -10,19 +10,19 @@ package vavi.apps.lisp;
 
 
 /**
- * コメントを読んだ場合にスローされます．
- * 
+ * Thrown when a comment is read.
+ *
  * @author <a href="mailto:umjammer@gmail.com">Naohide Sano</a> (nsano)
  * @version 0.00 970806 nsano make the initial version <br>
  */
 public final class CommentLispException extends LispException {
 
-    /** 詳細メッセージを持たない CommentLispException を構築します． */
+    /** Creates {@link CommentLispException} without message. */
     public CommentLispException() {
         super();
     }
 
-    /** 詳細メッセージを持つ CommentLispException を構築します． */
+    /** Constructs a new {@link CommentLispException} with the specified detail message. */
     public CommentLispException(String s) {
         super(s);
     }

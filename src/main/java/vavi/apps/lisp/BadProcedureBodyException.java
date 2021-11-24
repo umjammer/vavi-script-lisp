@@ -8,19 +8,19 @@ package vavi.apps.lisp;
 
 
 /**
- * プロシージャのボディが正しくない場合にスローされます．
- * 
+ * Thrown when a body of procedure is wrong.
+ *
  * @author <a href="mailto:umjammer@gmail.com">Naohide Sano</a> (nsano)
  * @version 0.00 970730 nsano make the initial version <br>
  */
 public final class BadProcedureBodyException extends LispException {
 
-    /** 詳細メッセージを持たない BadProcedureBodyException を構築します． */
+    /** Creates {@link BadProcedureBodyException} without message. */
     public BadProcedureBodyException() {
         super();
     }
 
-    /** 詳細メッセージを持つ BadProcedureBodyException を構築します． */
+    /** Constructs a new {@link BadProcedureBodyException} with the specified detail message. */
     public BadProcedureBodyException(String s) {
         super(s);
     }

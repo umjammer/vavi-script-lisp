@@ -12,7 +12,7 @@ import java.util.List;
 
 /**
  * This class processes <i>apply</i>.
- * 
+ *
  * @author <a href="mailto:umjammer@gmail.com">Naohide Sano</a> (nsano)
  * @version 0.00 970730 nsano make the initial version <br>
  */
@@ -20,7 +20,7 @@ public final class ApplySpecialForm extends LispSpecialForm {
 
     /**
      * Evaluates "apply" special form.
-     * 
+     *
      * @param exp S expression
      * @param env lisp environment
      * @param interp the lisp interpreter

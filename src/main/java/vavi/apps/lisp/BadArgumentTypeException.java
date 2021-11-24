@@ -8,20 +8,20 @@ package vavi.apps.lisp;
 
 
 /**
- * 引数の型が合わない場合にスローされます．
- * 
+ * Thrown when an argument types is wrong.
+ *
  * @author <a href="mailto:umjammer@gmail.com">Naohide Sano</a> (nsano)
  * @version 0.00 970730 nsano make the initial version <br>
  */
 
 public final class BadArgumentTypeException extends LispException {
 
-    /** 詳細メッセージを持たない BadArgumentTypeException を構築します． */
+    /** Creates {@link BadArgumentTypeException} without message. */
     public BadArgumentTypeException() {
         super();
     }
 
-    /** 詳細メッセージを持つ BadArgumentTypeException を構築します． */
+    /** Constructs a new {@link BadArgumentTypeException} with the specified detail message. */
     public BadArgumentTypeException(String s) {
         super(s);
     }

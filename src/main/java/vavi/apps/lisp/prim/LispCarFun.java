@@ -15,7 +15,7 @@ import vavi.apps.lisp.WrongArgumentCountException;
 
 /**
  * This class processes the primitive of <i>car</i>.
- * 
+ *
  * @author <a href="mailto:umjammer@gmail.com">Naohide Sano</a> (nsano)
  * @version 0.00 970730 nsano make the initial version <br>
  */
@@ -28,13 +28,13 @@ public final class LispCarFun extends LispPrimitive {
      * (car <i>argument</i>)
      * </tt>
      * <p>
-     * 
+     *
      * @param args arguments
      * @throws WrongArgumentCountException If the argument count is wrong
      */
     public Object apply(List<Object> args)
         throws WrongArgumentCountException {
-        
+
         checkArgs("car", args, 1);
         return ((LispCons) args.get(0)).getCar();
     }

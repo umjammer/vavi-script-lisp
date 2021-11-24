@@ -9,19 +9,19 @@ package vavi.apps.lisp;
 
 
 /**
- * ビルトインのプリミティブが存在しない場合にスローされます．
- * 
+ * Thrown when a built in primitive does not exist.
+ *
  * @author <a href="mailto:umjammer@gmail.com">Naohide Sano</a> (nsano)
  * @version 0.00 970730 nsano make the initial version <br>
  */
 public final class BuiltInNotFoundException extends LispException {
 
-    /** 詳細メッセージを持たない BuiltInNotFoundException を構築します． */
+    /** Creates {@link BuiltInNotFoundException} without message. */
     public BuiltInNotFoundException() {
         super();
     }
 
-    /** 詳細メッセージを持つ BuiltInNotFoundException を構築します． */
+    /** Constructs a new {@link BuiltInNotFoundException} with the specified detail message. */
     public BuiltInNotFoundException(String s) {
         super(s);
     }

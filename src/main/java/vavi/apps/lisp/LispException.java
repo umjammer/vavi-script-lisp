@@ -11,19 +11,19 @@ package vavi.apps.lisp;
 
 
 /**
- * このパッケージ内の例外の基本クラスです．
- * 
+ * The base exception class for this package.
+ *
  * @author <a href="mailto:umjammer@gmail.com">Naohide Sano</a> (nsano)
  * @version 0.00 970730 nsano make the initial version <br>
  */
 public class LispException extends Exception {
 
-    /** 詳細メッセージを持たない LispException を構築します． */
+    /** Creates {@link LispException} without message. */
     public LispException() {
         super();
     }
 
-    /** 詳細メッセージを持つ LispException を構築します． */
+    /** Constructs a new {@link LispException} with the specified detail message. */
     public LispException(String s) {
         super(s);
     }

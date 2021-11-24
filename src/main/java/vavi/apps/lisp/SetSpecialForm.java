@@ -9,7 +9,7 @@ package vavi.apps.lisp;
 
 /**
  * This class processes <i>set</i>.
- * 
+ *
  * @author <a href="mailto:umjammer@gmail.com">Naohide Sano</a> (nsano)
  * @version 0.00 970730 nsano make the initial version <br>
  */
@@ -17,7 +17,7 @@ public final class SetSpecialForm extends LispSpecialForm {
 
     /**
      * Evaluates "set" special form.
-     * 
+     *
      * @param exp the S expression
      * @param env the lisp environment
      * @param interp the lisp interpreter

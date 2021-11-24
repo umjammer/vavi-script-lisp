@@ -17,9 +17,9 @@ import java.util.Map;
 
 /**
  * This class read S expression from a stream.
- * 
+ *
  * TODO comment implementation is bad.
- * 
+ *
  * @author <a href="mailto:umjammer@gmail.com">Naohide Sano</a> (nsano)
  * @version 0.00 970730 nsano make the initial version <br>
  *          0.01 971203 nsano add ready <br>
@@ -57,7 +57,7 @@ public final class LispReader {
 
     /**
      * Creates a Reader object which can read S expression.
-     * 
+     *
      * @param reader the reader of S expression
      * @param symbolMap the Map object of lisp symbols
      */
@@ -74,7 +74,7 @@ public final class LispReader {
 
     /**
      * Reads a next token of S expression.
-     * 
+     *
      * @return the token read
      * @throws IncompleteExpressionException If a S expression reading is not completed
      * @throws InvalidLispExpressionException If a syntax error be caught.
@@ -87,7 +87,7 @@ public final class LispReader {
 
     /**
      * Reads a next token of S expression skipping white space and comment.
-     * 
+     *
      * @return the token read
      * @throws IncompleteExpressionException If a S expression reading is not completed.
      * @throws InvalidLispExpressionException If a syntax error be caught.
@@ -108,7 +108,7 @@ public final class LispReader {
 
     /**
      * Implements reading.
-     * 
+     *
      * @throws IncompleteExpressionException If a S expression reading is not completed.
      * @throws InvalidLispExpressionException If a syntax error be caught.
      * @throws IOException If an IO error occurs.
@@ -160,7 +160,7 @@ public final class LispReader {
 
     /**
      * Reads a number.
-     * 
+     *
      * @throws IncompleteExpressionException If a S expression reading is not completed.
      * @throws IOException If an IO error occurs.
      */
@@ -189,7 +189,7 @@ public final class LispReader {
 
     /**
      * Reads a symbol.
-     * 
+     *
      * @throws IncompleteExpressionException If a S expression reading is not completed.
      * @throws IOException If an IO error occurs.
      */
@@ -211,7 +211,7 @@ public final class LispReader {
 
     /**
      * Reads a string.
-     * 
+     *
      * @throws IncompleteExpressionException If a S expression reading is not completed.
      * @throws IOException If an IO error occurs.
      */
@@ -234,7 +234,7 @@ public final class LispReader {
 
     /**
      * Reads a "list" primitive.
-     * 
+     *
      * @throws IncompleteExpressionException If a S expression reading is not completed.
      * @throws InvalidLispExpressionException If a syntax error be caught.
      * @throws IOException If an IO error occurs.
@@ -256,7 +256,7 @@ public final class LispReader {
 
     /**
      * Reads "cdr" primitive.
-     * 
+     *
      * @throws IncompleteExpressionException If a S expression reading is not completed.
      * @throws InvalidLispExpressionException If a syntax error be caught.
      * @throws IOException If an IO error occurs.
@@ -296,7 +296,7 @@ public final class LispReader {
 
     /**
      * Skips comment from the input stream. Comment starts by semicolon and continues to the end of line.
-     * 
+     *
      * @throws IOException If an IO error occurs.
      */
     private void skipComment() throws IOException {
@@ -316,7 +316,7 @@ public final class LispReader {
 
     /**
      * Skips white spaces from the input stream. White space means Space, Tab, CR and LF.
-     * 
+     *
      * @throws IOException If an IO error occurs.
      */
     private void skipWhite() throws IOException {
@@ -330,7 +330,7 @@ public final class LispReader {
 
     /**
      * Gets a character from the stream.
-     * 
+     *
      * @throws IOException If an IO error occurs.
      */
     private char getCh() throws IOException {
@@ -353,7 +353,7 @@ public final class LispReader {
 
     /**
      * Gets a char.
-     * 
+     *
      * @throws IncompleteExpressionException If a S expression reading is not completed.
      * @throws IOException If an IO error occurs.
      */
@@ -367,7 +367,7 @@ public final class LispReader {
         int next = reader.read();
 
 // if (next == -1) { throw new IncompleteExpressionException("Incomplete Expression:\n\n" + charsSoFar.toString().trim()); }
-         
+
         char nextChar = Character.toLowerCase((char) next);
         charsSoFar.append(nextChar);
         return nextChar;
@@ -375,7 +375,7 @@ public final class LispReader {
 
     /**
      * Gets a string char.
-     * 
+     *
      * @throws IncompleteExpressionException If a S expression reading is not completed.
      * @throws IOException If an IO error occurs.
      */
@@ -394,7 +394,7 @@ public final class LispReader {
 
     /**
      * Reads an error.
-     * 
+     *
      * @throws InvalidLispExpressionException If a syntax error be caught.
      */
     private void readError(String message) throws InvalidLispExpressionException {
@@ -420,7 +420,7 @@ public final class LispReader {
     /**
      * Tell whether this stream is ready to be read. A buffered character stream is ready if the buffer is not empty, or if the
      * underlying character stream is ready.
-     * 
+     *
      * @throws IOException If an IO error occurs
      * @deprecated
      */
@@ -428,19 +428,19 @@ public final class LispReader {
         return reader.ready();
     }
 
-    /** シンボルのキャッシュ */
+    /** cache for symbols */
     private Map<String, LispSymbol> symbolMap;
 
-    /** リーダ */
+    /** reader */
     private Reader reader;
 
-    /** カレントの文字 */
+    /** current character */
     private char ch;
 
-    /** 今まで読みこんだ文字列 */
+    /** strings read so far */
     private StringBuilder charsSoFar;
 
-    /** クオート */
+    /** quote */
     private LispSymbol quote;
 }
 

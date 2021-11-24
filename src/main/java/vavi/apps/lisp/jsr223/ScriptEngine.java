@@ -27,12 +27,12 @@ import vavi.apps.lisp.LispInterpreter;
 
 /**
  * ScriptEngine.
- * 
+ *
  * @author <a href="mailto:umjammer@gmail.com">Naohide Sano</a> (nsano)
  * @version 0.00 080602 nsano make the initial version <br>
  */
 public class ScriptEngine implements javax.script.ScriptEngine {
-    
+
     /** */
     private static final String __ENGINE_VERSION__ = "0.0 release 1";
     /** */
@@ -41,10 +41,10 @@ public class ScriptEngine implements javax.script.ScriptEngine {
     private static final String MY_SHORT_NAME = "lisp";
     /** */
     private static final String STR_THISLANGUAGE = "Scheme";
-    
+
     /** */
     private static final ScriptEngineFactory myFactory = new ScriptEngineFactory();
-    
+
     /** */
     private ScriptContext defaultContext;
 
@@ -76,7 +76,7 @@ public class ScriptEngine implements javax.script.ScriptEngine {
     public Object eval(String script) throws ScriptException {
         return eval(script, getContext());
     }
-    
+
     /* */
     public Object eval(String script, ScriptContext context) throws ScriptException {
         try {
@@ -101,7 +101,7 @@ public class ScriptEngine implements javax.script.ScriptEngine {
             throw new ScriptException(e);
         }
     }
-    
+
     /* */
     public Object eval(String script, Bindings bindings) throws ScriptException {
         Bindings current = getContext().getBindings(ScriptContext.ENGINE_SCOPE);
@@ -110,62 +110,62 @@ public class ScriptEngine implements javax.script.ScriptEngine {
         getContext().setBindings(current, ScriptContext.ENGINE_SCOPE);
         return result;
     }
-    
+
     /* */
     public Object eval(Reader reader) throws ScriptException {
         return eval(getScriptFromReader(reader));
     }
-    
+
     /* */
     public Object eval(Reader reader, ScriptContext scriptContext) throws ScriptException {
         return eval(getScriptFromReader(reader), scriptContext);
     }
-    
+
     /* */
     public Object eval(Reader reader, Bindings bindings) throws ScriptException {
         return eval(getScriptFromReader(reader), bindings);
     }
-    
+
     /* */
     public void put(String key, Object value) {
         getBindings(ScriptContext.ENGINE_SCOPE).put(key, value);
     }
-    
+
     /* */
     public Object get(String key) {
         return getBindings(ScriptContext.ENGINE_SCOPE).get(key);
     }
-    
+
     /* */
     public Bindings getBindings(int scope) {
         return getContext().getBindings(scope);
     }
-    
+
     /* */
     public void setBindings(Bindings bindings, int scope) {
         getContext().setBindings(bindings, scope);
     }
-    
+
     /* */
     public Bindings createBindings() {
         return new SimpleBindings();
     }
-    
+
     /* */
     public ScriptContext getContext() {
         return defaultContext;
     }
-    
+
     /* */
     public void setContext(ScriptContext context) {
         defaultContext = context;
     }
-    
+
     /* */
     public ScriptEngineFactory getFactory() {
         return myFactory;
     }
-    
+
     /** */
     private static String getScriptFromReader(Reader reader) {
         try {

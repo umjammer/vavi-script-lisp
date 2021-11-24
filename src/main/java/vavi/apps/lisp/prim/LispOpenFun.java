@@ -22,7 +22,7 @@ import vavi.apps.lisp.WrongArgumentCountException;
 
 /**
  * This class processes the primitive of <i>open</i>.
- * 
+ *
  * @author <a href="mailto:umjammer@gmail.com">Naohide Sano</a> (nsano)
  * @version 0.00 970730 nsano make the initial version <br>
  */
@@ -35,7 +35,7 @@ public final class LispOpenFun extends LispPrimitive {
      * (open String:<i>fileName</i> LispSymbol:[output|input])
      * </tt>
      * <p>
-     * 
+     *
      * @param args arguments
      * @param interp the lisp interpreter
      * @return LispFileInputStream, LispFileOutputStream

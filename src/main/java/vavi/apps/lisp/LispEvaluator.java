@@ -13,7 +13,7 @@ import java.util.List;
 
 /**
  * Lisp Evaluator of the interpreter in this packege.
- * 
+ *
  * @author <a href="mailto:umjammer@gmail.com">Naohide Sano</a> (nsano)
  * @version 0.00 970730 nsano make the initial version <br>
  *          0.01 97xxxx nsano add class path <br>
@@ -22,7 +22,7 @@ public final class LispEvaluator {
 
     /**
      * Creates a lisp evaluator.
-     * 
+     *
      * @param classPath class path string
      */
     LispEvaluator(String classPath) {
@@ -31,7 +31,7 @@ public final class LispEvaluator {
 
     /**
      * Evaluates.
-     * 
+     *
      * @param exp lisp expression
      * @param env lisp environment
      * @param interp the lisp interpreter
@@ -82,7 +82,7 @@ public final class LispEvaluator {
 
     /**
      * Evaluates sequence,
-     * 
+     *
      * @param seq the sequence
      * @param env lisp environment
      * @param interp the lisp interpreter
@@ -100,7 +100,7 @@ public final class LispEvaluator {
 
     /**
      * Evaluates arguments.
-     * 
+     *
      * @param exp lisp expression
      * @param env lisp environment
      * @param interp the lisp interpreter
@@ -119,7 +119,7 @@ public final class LispEvaluator {
 
     /**
      * Gets the value of the symbol.
-     * 
+     *
      * @param sym the lisp symbol
      * @param env lisp environment
      */

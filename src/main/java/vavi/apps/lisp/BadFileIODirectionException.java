@@ -8,19 +8,19 @@ package vavi.apps.lisp;
 
 
 /**
- * ファイルのリードライトの方向が正しくない場合にスローされます．
- * 
+ * Thrown when a direction for file read/write is wrong.
+ *
  * @author <a href="mailto:umjammer@gmail.com">Naohide Sano</a> (nsano)
  * @version 0.00 970730 nsano make the initial version <br>
  */
 public final class BadFileIODirectionException extends LispException {
 
-    /** 詳細メッセージを持たない BadFileIODirectionException を構築します． */
+    /** Creates {@link BadFileIODirectionException} without message. */
     public BadFileIODirectionException() {
         super();
     }
 
-    /** 詳細メッセージを持つ BadFileIODirectionException を構築します． */
+    /** Constructs a new {@link BadFileIODirectionException} with the specified detail message. */
     public BadFileIODirectionException(String s) {
         super(s);
     }

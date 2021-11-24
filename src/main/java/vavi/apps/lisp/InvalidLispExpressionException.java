@@ -11,21 +11,21 @@ package vavi.apps.lisp;
 
 
 /**
- * シンタックスに間違いがあった場合にスローされます．
- * 
+ * Thrown when a syntax error occurs.
+ *
  * @author <a href="mailto:umjammer@gmail.com">Naohide Sano</a> (nsano)
  * @version 0.00 970730 nsano make the initial version <br>
  */
 public final class InvalidLispExpressionException extends LispException {
 
     /**
-     * 詳細メッセージを持たない InvalidLispExpressionException を構築します．
+     * Creates {@link InvalidLispExpressionException} without message.
      */
     public InvalidLispExpressionException() {
         super();
     }
 
-    /** 詳細メッセージを持つ InvalidLispExpressionException を構築します． */
+    /** Constructs a new {@link InvalidLispExpressionException} with the specified detail message. */
     public InvalidLispExpressionException(String s) {
         super(s);
     }

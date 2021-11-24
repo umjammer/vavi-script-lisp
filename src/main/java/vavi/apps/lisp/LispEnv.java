@@ -14,12 +14,12 @@ import java.util.List;
 
 
 /**
- * This class supports a mapping between names and values. It is used to store the values of variables for the Lisp system. Each
- * LispEnv is linked to a "parent" LispEnv. If a variable is not found during name lookup, the lookup process continues with the
- * parent.
- * 
+ * This class supports a mapping between names and values. It is used to store
+ * the values of variables for the Lisp system. Each LispEnv is linked to a
+ * "parent" LispEnv. If a variable is not found during name lookup, the lookup
+ * process continues with the parent.
+ *
  * @author <a href="mailto:umjammer@gmail.com">Naohide Sano</a> (nsano)
- * 
  * @version 0.00 970730 nsano make the initial version <br>
  */
 public final class LispEnv implements LispPrintable {
@@ -34,7 +34,7 @@ public final class LispEnv implements LispPrintable {
 
     /**
      * Creates lisp environment.
-     * 
+     *
      * @param vars symbols
      * @param vals values of symbols
      */
@@ -45,7 +45,7 @@ public final class LispEnv implements LispPrintable {
 
     /**
      * Extends environment address.
-     * 
+     *
      * @param vars symbols
      * @param vals values of symbols
      */
@@ -57,7 +57,7 @@ public final class LispEnv implements LispPrintable {
 
     /**
      * Sets the new sybmbol with value.
-     * 
+     *
      * @param sym the lisp symbol
      * @param val value of the symbol
      * @throws UnboundSymbolException If the symbol is not bound
@@ -68,7 +68,7 @@ public final class LispEnv implements LispPrintable {
 
     /**
      * Gets the value of the symbol.
-     * 
+     *
      * @param sym the lisp symbol
      * @throws UnboundSymbolException If the symbol is not bound.
      */
@@ -78,7 +78,7 @@ public final class LispEnv implements LispPrintable {
 
     /**
      * Defines the new symbol with value.
-     * 
+     *
      * @param sym the lisp symbol
      * @param val value of the symbol
      * @throws UnboundSymbolException If the symbol is not bound.
@@ -107,7 +107,7 @@ public final class LispEnv implements LispPrintable {
 
     /**
      * Updates value of the specified symbol.
-     * 
+     *
      * @param sym the lisp symbol
      * @param valToStore value of the symbol
      */

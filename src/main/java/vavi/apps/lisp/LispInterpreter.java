@@ -25,13 +25,13 @@ import java.util.Map;
  * S 式で表現された文字列をストリームから読み込み実行するクラスです。 インタラクティブなメソッドと非インタラクティブなメソッドがあります． Lisp
  * エンジンは Scheme を基にしています． extension にパッケージ名を指定することによりユーザが作成した Lisp 関数を
  * LispInterpreter に組み込むことが可能です．
- * 
+ *
  * <pre>
  *  
  *   Default Functions List
  *   
  * </pre>
- * 
+ *
  * <table border="1">
  * <tr>
  * <td bgcolor="#00FFFF">シンボル</td>
@@ -268,10 +268,10 @@ import java.util.Map;
  * <td> </td>
  * </tr>
  * </table>
- * 
+ *
  * <p>
- * コメントは ; で始まり行末までコメントとみなされる．
- * 
+ * comment is starts with ";" and until the end of line.
+ *
  * @see LispPrimitive
  * @author <a href="mailto:umjammer@gmail.com">Naohide Sano</a> (nsano)
  * @version 0.00 970730 nsano make the initial version <br>
@@ -286,32 +286,32 @@ import java.util.Map;
  */
 public final class LispInterpreter {
 
-    /** このクラスのパッケージ名のベース名 */
+    /** the base name for the package */
     private static final String rootPath = "vavi.apps.lisp";
 
-    /** デフォルトプリミティブのパッケージ名のベース名 */
+    /** the base name for package for default primitives */
     private static final String primitivePath = rootPath + "." + "prim";
 
-    /** デフォルトの拡張プリミティブのパッケージ名のベース名 */
+    /** the base name for package for default extended primitives */
     private static final String defaultPath = rootPath + "." + "extend";
 
-    /** 拡張プリミティブのクラスがあるパッケージ名 */
+    /** package name for extended primitives */
     private String extentionPath;
 
-    /** エンコーディング */
+    /** encoding */
     private String encoding;
 
-    /** デフォルトのエンコーディング */
+    /** default encoding */
     private static final String defaultEncoding = System.getProperty("file.encoding");
 
     /**
      * Creates a lisp engine instance using specified parameters.
-     * 
+     *
      * <ul>
      * <li>the encoding is the value of the System property
      * <li>the extension path is {@link #defaultPath} + ".extend"
      * </ul>
-     * 
+     *
      * @param in the InputStream of S expression to be read
      * @throws IOException 
      */
@@ -321,11 +321,11 @@ public final class LispInterpreter {
 
     /**
      * Creates a lisp engine instance using specified parameters.
-     * 
+     *
      * <ul>
      * <li>the extension path is {@link #defaultPath} + ".extend"
      * </ul>
-     * 
+     *
      * @param in the InputStream of S expression to be read
      * @param extend the package name of lisp extention
      * @throws IOException 
@@ -336,7 +336,7 @@ public final class LispInterpreter {
 
     /**
      * Creates a lisp engine instance using specified parameters.
-     * 
+     *
      * @param in the InputStream of S expression to be read
      * @param enc the encoding of S expression
      * @param extend the package name of lisp extension
@@ -356,7 +356,7 @@ public final class LispInterpreter {
 
         init();
     }
-    
+
     /**
      */
     public LispInterpreter() {
@@ -371,7 +371,7 @@ public final class LispInterpreter {
         } else {
             encoding = enc;
         }
-        
+
         extentionPath = extend;
 
         evaluator = new LispEvaluator(extentionPath);
@@ -422,7 +422,7 @@ public final class LispInterpreter {
 
     /**
      * Gets the encoding of the lisp reader.
-     * 
+     *
      * @return the encoding of the lisp reader.
      */
     public String getEncoding() {
@@ -431,7 +431,7 @@ public final class LispInterpreter {
 
     /**
      * Reads the stream and convert to S expression
-     * 
+     *
      * @return S expression
      * @throws IOException If an IO error occurs
      * @throws LispException If a lisp error occurs
@@ -442,7 +442,7 @@ public final class LispInterpreter {
 
     /**
      * Evaluates S expression.
-     * 
+     *
      * @see #read
      * @param expression the S expression got by <code>#read</code>
      * @return the result
@@ -454,7 +454,7 @@ public final class LispInterpreter {
 
     /**
      * Prints the result got by <code>#eval</code>.
-     * 
+     *
      * @see #eval
      * @param result the result got by <code>#eval</code>
      */
@@ -494,7 +494,7 @@ public final class LispInterpreter {
     /**
      * Interprets the S expression stream quietly. this method is useful in your
      * application which use the lisp interpreter.
-     * 
+     *
      * @return Vector of result set. A result in this vector is one S
      *         expression evaluated.
      * @throws LispException If a lisp error occurs
@@ -520,7 +520,7 @@ public final class LispInterpreter {
 
     /**
      * Gets the symbol hash table (internal use).
-     * 
+     *
      * @return the symbol hash table
      */
     public Map<String, LispSymbol> getSymbols() {
@@ -529,7 +529,7 @@ public final class LispInterpreter {
 
     /**
      * Gets the lisp environment (internal use).
-     * 
+     *
      * @return the lisp environment
      */
     public LispEnv getEnv() {
@@ -538,7 +538,7 @@ public final class LispInterpreter {
 
     /**
      * Gets the lisp reader (internal use).
-     * 
+     *
      * @return the lisp reader
      */
     public LispReader getReader() {
@@ -553,7 +553,7 @@ public final class LispInterpreter {
 
     /**
      * Gets the lisp evaluator (internal use).
-     * 
+     *
      * @return the lisp evaluator
      */
     public LispEvaluator getEvaluator() {
@@ -592,34 +592,32 @@ public final class LispInterpreter {
 
     /**
      * Change the lisp extension path.
-     * 
+     *
      * @param path the lisp extension class path
      */
     public void changeExtendEvaluator(String path) {
         evaluator = new LispEvaluator(path);
     }
 
-    /** シンボルのテーブル */
+    /** table for symbols */
     private Map<String, LispSymbol> symbols = new HashMap<String, LispSymbol>();
 
-    /** 環境 */
+    /** environment */
     private LispEnv environment = new LispEnv();
 
-    /** リーダ */
+    /** reader */
     private LispReader reader;
 
-    /** 評価エンジン */
+    /** the engine for evaluation */
     private LispEvaluator evaluator;
 
     /**
      * Executes the lisp interpreter.
-     * 
+     *
      * <pre>
-     *  
      *   usage: java LispInterpreter extension_path
-     *   
      * </pre>
-     * 
+     *
      * @throws Exception If an error occurs.
      */
     public static void main(String[] args) throws Exception {

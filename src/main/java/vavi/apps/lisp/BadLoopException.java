@@ -8,19 +8,19 @@ package vavi.apps.lisp;
 
 
 /**
- * 正しくない loop が発生した場合にスローされます．
- * 
+ * Thrown when a wrong loop occurs.
+ *
  * @author <a href="mailto:umjammer@gmail.com">Naohide Sano</a> (nsano)
  * @version 0.00 970730 nsano make the initial version <br>
  */
 public final class BadLoopException extends LispException {
 
-    /** 詳細メッセージを持たない BadLoopException を構築します． */
+    /** Creates {@link BadLoopException} without message. */
     public BadLoopException() {
         super();
     }
 
-    /** 詳細メッセージを持つ BadLoopException を構築します． */
+    /** Constructs a new {@link BadLoopException} with the specified detail message. */
     public BadLoopException(String s) {
         super(s);
     }

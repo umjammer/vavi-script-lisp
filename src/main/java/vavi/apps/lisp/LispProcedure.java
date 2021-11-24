@@ -12,7 +12,7 @@ import java.util.List;
 
 /**
  * This class is the base class of lisp procedure.
- * 
+ *
  * @author <a href="mailto:umjammer@gmail.com">Naohide Sano</a> (nsano)
  * @version 0.00 970730 nsano make the initial version <br>
  */
@@ -20,7 +20,7 @@ public final class LispProcedure implements LispFunction, LispPrintable {
 
     /**
      * Creates a lisp procedure.
-     * 
+     *
      * @param exp the S expression
      * @param env the lisp environment
      */
@@ -67,7 +67,7 @@ public final class LispProcedure implements LispFunction, LispPrintable {
 
     /**
      * Processes this procedure.
-     * 
+     *
      * @param args arguments
      * @param interp the lisp interpreter
      * @throws BadArgumentListException If arguments are bad.

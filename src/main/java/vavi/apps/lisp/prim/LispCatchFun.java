@@ -21,7 +21,7 @@ import vavi.apps.lisp.WrongArgumentCountException;
 
 /**
  * This class processes the primitive of <i>catch</i>.
- * 
+ *
  * @author <a href="mailto:umjammer@gmail.com">Naohide Sano</a> (nsano)
  * @version 0.00 970730 nsano make the initial version <br>
  */
@@ -37,7 +37,7 @@ public final class LispCatchFun extends LispPrimitive {
      * (catch <i>argment1</i> <i>argment2</i>)
      * </tt>
      * <p>
-     * 
+     *
      * @param args arguments
      * @throws BadArgumentTypeException If a bad type argument exists
      * @throws LispException If a lisp error occurs

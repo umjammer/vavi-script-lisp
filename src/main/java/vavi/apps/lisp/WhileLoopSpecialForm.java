@@ -9,7 +9,7 @@ package vavi.apps.lisp;
 
 /**
  * This class processes <i>while</i>.
- * 
+ *
  * @author <a href="mailto:umjammer@gmail.com">Naohide Sano</a> (nsano)
  * @version 0.00 970730 nsano make the initial version <br>
  */
@@ -22,7 +22,7 @@ public final class WhileLoopSpecialForm extends LispSpecialForm {
      * (while ...)
      * </tt>
      * <p>
-     * 
+     *
      * @param exp S expression
      * @param env lisp environment
      * @param interp lisp interpreter

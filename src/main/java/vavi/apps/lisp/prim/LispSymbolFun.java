@@ -17,7 +17,7 @@ import vavi.apps.lisp.WrongArgumentCountException;
 /**
  * This class processes the lisp primitive of <i>symbol?</i>. The function "symbol?" takes one argument, and returns true if the
  * argument is a lisp symbol or returns false.
- * 
+ *
  * @author <a href="mailto:umjammer@gmail.com">Naohide Sano</a> (nsano)
  * @version 0.00 970730 nsano make the initial version <br>
  */
@@ -30,7 +30,7 @@ public final class LispSymbolFun extends LispPrimitive {
      * (symbol? <i>target</i>)
      * </tt>
      * <p>
-     * 
+     *
      * @param args arguments
      * @return true: the argument is a lisp symbol <br>
      *         false: the argument is not a lisp symbol

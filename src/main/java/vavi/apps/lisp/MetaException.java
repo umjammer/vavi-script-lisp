@@ -9,7 +9,7 @@ package vavi.apps.lisp;
 
 /**
  * 入れ子の例外を持つ例外クラスです．
- * 
+ *
  * @author <a href="mailto:umjammer@gmail.com">Naohide Sano</a> (nsano)
  * @version 0.00 991209 nsano make the initial version <br>
  */
@@ -19,14 +19,14 @@ public final class MetaException extends LispException {
     private Throwable throwable;
 
     /**
-     * 詳細メッセージを持たない MetaException を構築します．
+     * Creates {@link MetaException} without message.
      */
     public MetaException(Throwable throwable) {
         this.throwable = throwable;
     }
 
     /**
-     * 詳細メッセージを持つ MetaException を構築します．
+     * Constructs a new {@link MetaException} with the specified detail message.
      */
     public Throwable getThrowable() {
         return throwable;
