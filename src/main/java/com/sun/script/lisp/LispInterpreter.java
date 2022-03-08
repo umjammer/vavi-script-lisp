@@ -285,7 +285,7 @@ import java.util.Map;
 public final class LispInterpreter {
 
     /** the base name for the package */
-    private static final String rootPath = "vavi.apps.lisp";
+    private static final String rootPath = LispInterpreter.class.getPackage().getName();
 
     /** the base name for package for default primitives */
     private static final String primitivePath = rootPath + "." + "prim";
