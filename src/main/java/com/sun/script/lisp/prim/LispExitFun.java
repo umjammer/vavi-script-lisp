@@ -22,6 +22,11 @@ import com.sun.script.lisp.WrongArgumentCountException;
  */
 public final class LispExitFun extends LispPrimitive {
 
+    @Override
+    public String toLispString() {
+        return "exit";
+    }
+
     /**
      * Processes <i>exit</i> expression.
      * <p>
@@ -36,7 +41,7 @@ public final class LispExitFun extends LispPrimitive {
      */
     public Object apply(List<Object> args) throws WrongArgumentCountException, ExitLispException {
 
-        checkArgs("exit", args, 0);
+        checkArgs(toLispString(), args, 0);
         throw new ExitLispException();
     }
 }

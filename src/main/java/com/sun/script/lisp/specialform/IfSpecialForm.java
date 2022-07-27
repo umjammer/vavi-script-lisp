@@ -5,7 +5,16 @@
  * Programmed by Jerry R. Jackson, Alan L. McClellan
  */
 
-package com.sun.script.lisp;
+package com.sun.script.lisp.specialform;
+
+
+import com.sun.script.lisp.LispBoolean;
+import com.sun.script.lisp.LispCons;
+import com.sun.script.lisp.LispEnv;
+import com.sun.script.lisp.LispEvaluator;
+import com.sun.script.lisp.LispException;
+import com.sun.script.lisp.LispInterpreter;
+import com.sun.script.lisp.LispSpecialForm;
 
 
 /**
@@ -16,6 +25,11 @@ package com.sun.script.lisp;
  * @version 0.00 970730 nsano make the initial version <br>
  */
 public final class IfSpecialForm extends LispSpecialForm {
+
+    @Override
+    public String toLispString() {
+        return "if";
+    }
 
     /**
      * Evaluates "if" special form.

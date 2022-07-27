@@ -22,6 +22,11 @@ import com.sun.script.lisp.WrongArgumentCountException;
  */
 public final class LispEqlFun extends LispPrimitive {
 
+    @Override
+    public String toLispString() {
+        return "=";
+    }
+
     /**
      * Processes <i>=</i> expression.
      * <p>
@@ -35,7 +40,7 @@ public final class LispEqlFun extends LispPrimitive {
      */
     public Object apply(List<Object> args) throws WrongArgumentCountException {
 
-        checkArgs("=", args, 2);
+        checkArgs(toLispString(), args, 2);
 
         Object arg1 = args.get(0);
         Object arg2 = args.get(1);

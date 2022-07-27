@@ -25,6 +25,11 @@ import com.sun.script.lisp.WrongArgumentCountException;
  */
 public final class LispEvalFun extends LispPrimitive {
 
+    @Override
+    public String toLispString() {
+        return "eval";
+    }
+
     /**
      * Processes <i>eval</i> expression.
      * <p>
@@ -40,7 +45,7 @@ public final class LispEvalFun extends LispPrimitive {
      */
     public Object apply(List<Object> args, LispInterpreter interp) throws WrongArgumentCountException, LispException {
 
-        checkArgs("eval", args, 2);
+        checkArgs(toLispString(), args, 2);
 
         LispEvaluator ev = interp.getEvaluator();
 

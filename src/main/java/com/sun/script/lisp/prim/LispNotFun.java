@@ -22,6 +22,11 @@ import com.sun.script.lisp.WrongArgumentCountException;
  */
 public final class LispNotFun extends LispPrimitive {
 
+    @Override
+    public String toLispString() {
+        return "not";
+    }
+
     /**
      * Processes <i>not</i> expression.
      * <p>
@@ -35,7 +40,7 @@ public final class LispNotFun extends LispPrimitive {
      */
     public Object apply(List<Object> args) throws WrongArgumentCountException {
 
-        checkArgs("not", args, 1);
+        checkArgs(toLispString(), args, 1);
 
         if (args.get(0) == LispBoolean.falseValue) {
             return LispBoolean.trueValue;

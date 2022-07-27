@@ -38,6 +38,11 @@ import com.sun.script.lisp.WrongArgumentCountException;
  */
 public final class LispLoadFun extends LispPrimitive {
 
+    @Override
+    public String toLispString() {
+        return "load";
+    }
+
     /**
      * Processes <i>load</i> expression.
      * <p>
@@ -64,7 +69,7 @@ public final class LispLoadFun extends LispPrimitive {
                BadEvalExpressionException,
                LispException {
 
-        checkArgs("load", args, 1);
+        checkArgs(toLispString(), args, 1);
 
         Object arg1 = args.get(0);
         InputStream in = null;

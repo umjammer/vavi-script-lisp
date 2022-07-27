@@ -33,6 +33,11 @@ import com.sun.script.lisp.WrongArgumentCountException;
  */
 public final class LispReadFun extends LispPrimitive {
 
+    @Override
+    public String toLispString() {
+        return "read";
+    }
+
     /**
      * Processes <i>read</i> expression.
      * <p>

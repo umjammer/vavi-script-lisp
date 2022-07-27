@@ -18,7 +18,7 @@ import java.util.List;
  *
  * @version 0.00 970730 nsano make the initial version <br>
  */
-public class LispPrimitive implements LispFunction, LispPrintable {
+public abstract class LispPrimitive implements LispFunction, LispPrintable {
 
     /**
      * Overrides this method for an user created primitive.

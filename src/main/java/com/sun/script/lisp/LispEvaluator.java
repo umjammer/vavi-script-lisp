@@ -107,7 +107,7 @@ public final class LispEvaluator {
      */
     private List<Object> evalArgs(LispCons exp, LispEnv env, LispInterpreter interp) throws BadEvalExpressionException, LispException {
 
-        List<Object> args = new ArrayList<Object>();
+        List<Object> args = new ArrayList<>();
 
         while (exp != LispCons.emptyList) {
             args.add(eval(exp.getCar(), env, interp));
@@ -131,7 +131,7 @@ public final class LispEvaluator {
             symVal = env.fetch(sym);
         } catch (UnboundSymbolException e) {
 
-            Class<?> builtIn = null;
+            Class<?> builtIn;
             String className = classPath + "." + sym;
 
             try {
@@ -148,25 +148,6 @@ public final class LispEvaluator {
             }
 
             return symVal;
-        }
-
-        if (symVal instanceof LispBuiltIn) {
-
-            Class<?> builtIn = null;
-            String className = ((LispBuiltIn) symVal).getName();
-
-            try {
-                builtIn = Class.forName(className);
-            } catch (Exception locException) {
-                throw new UnboundSymbolException("Unbound symbol: " + sym);
-            }
-
-            try {
-                symVal = builtIn.newInstance();
-                env.store(sym, symVal);
-            } catch (Exception constructionException) {
-                throw new UnboundSymbolException("Unbound symbol: " + sym);
-            }
         }
 
         return symVal;

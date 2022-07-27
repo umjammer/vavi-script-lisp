@@ -21,6 +21,11 @@ import com.sun.script.lisp.LispPrimitive;
  */
 public final class LispPlusFun extends LispPrimitive {
 
+    @Override
+    public String toLispString() {
+        return "+";
+    }
+
     /**
      * 足し算を行います．
      * <p>
@@ -42,11 +47,11 @@ public final class LispPlusFun extends LispPrimitive {
                 break;
             }
 
-            result += ((Integer) args.get(index)).intValue();
+            result += (Integer) args.get(index);
         }
 
         if (index == args.size()) {
-            return new Integer(result);
+            return result;
         } else {
             double dresult = result;
 
@@ -61,7 +66,7 @@ public final class LispPlusFun extends LispPrimitive {
                 index++;
             }
 
-            return new Double(dresult);
+            return dresult;
         }
     }
 }

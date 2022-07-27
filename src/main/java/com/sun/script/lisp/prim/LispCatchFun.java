@@ -28,8 +28,13 @@ import com.sun.script.lisp.WrongArgumentCountException;
  */
 public final class LispCatchFun extends LispPrimitive {
 
+    @Override
+    public String toLispString() {
+        return "catch";
+    }
+
     /** The stack for exceptions */
-    private static List<Object> vec = new ArrayList<Object>();
+    private static List<Object> vec = new ArrayList<>();
 
     /**
      * Processes <i>catch</i> expression.
@@ -46,7 +51,7 @@ public final class LispCatchFun extends LispPrimitive {
      */
     public Object apply(List<Object> args, LispInterpreter interp) throws BadArgumentTypeException, LispException, WrongArgumentCountException {
 
-        checkArgs("catch", args, 2);
+        checkArgs(toLispString(), args, 2);
 
         Object arg1 = args.get(0);
         Object arg2 = args.get(1);

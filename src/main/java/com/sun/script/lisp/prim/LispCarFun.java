@@ -22,6 +22,11 @@ import com.sun.script.lisp.WrongArgumentCountException;
  */
 public final class LispCarFun extends LispPrimitive {
 
+    @Override
+    public String toLispString() {
+        return "car";
+    }
+
     /**
      * Processes <i>car</i> expression.
      * <p>
@@ -36,7 +41,7 @@ public final class LispCarFun extends LispPrimitive {
     public Object apply(List<Object> args)
         throws WrongArgumentCountException {
 
-        checkArgs("car", args, 1);
+        checkArgs(toLispString(), args, 1);
         return ((LispCons) args.get(0)).getCar();
     }
 }

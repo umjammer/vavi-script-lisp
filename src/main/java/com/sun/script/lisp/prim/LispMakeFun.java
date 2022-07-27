@@ -22,6 +22,11 @@ import com.sun.script.lisp.WrongArgumentCountException;
  */
 public final class LispMakeFun extends LispPrimitive {
 
+    @Override
+    public String toLispString() {
+        return "make";
+    }
+
     /**
      * Processes <i>make</i> expression.
      * <p>
@@ -35,7 +40,7 @@ public final class LispMakeFun extends LispPrimitive {
      */
     public Object apply(List<Object> args) throws WrongArgumentCountException {
 
-        checkArgs("make", args, 1);
+        checkArgs(toLispString(), args, 1);
 
         Class<?> classToMake;
 

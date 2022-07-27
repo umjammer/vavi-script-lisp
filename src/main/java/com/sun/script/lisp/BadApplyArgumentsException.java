@@ -8,6 +8,9 @@
 package com.sun.script.lisp;
 
 
+import com.sun.script.lisp.specialform.ApplySpecialForm;
+
+
 /**
  * Thrown if an exception cause at {@link ApplySpecialForm}.
  *

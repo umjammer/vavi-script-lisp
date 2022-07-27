@@ -22,6 +22,11 @@ import com.sun.script.lisp.WrongArgumentCountException;
  */
 public final class LispCdrFun extends LispPrimitive {
 
+    @Override
+    public String toLispString() {
+        return "cdr";
+    }
+
     /**
      * Processes <i>cdr</i> expression.
      * <p>
@@ -35,7 +40,7 @@ public final class LispCdrFun extends LispPrimitive {
      */
     public Object apply(List<Object> args) throws WrongArgumentCountException {
 
-        checkArgs("cdr", args, 1);
+        checkArgs(toLispString(), args, 1);
         return ((LispCons) args.get(0)).getCdr();
     }
 }

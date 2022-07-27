@@ -22,6 +22,11 @@ import com.sun.script.lisp.WrongArgumentCountException;
  */
 public final class LispConsFun extends LispPrimitive {
 
+    @Override
+    public String toLispString() {
+        return "cons";
+    }
+
     /**
      * Processes <i>cons</i> expression.
      * <p>
@@ -35,7 +40,7 @@ public final class LispConsFun extends LispPrimitive {
      */
     public Object apply(List<Object> args) throws WrongArgumentCountException {
 
-        checkArgs("cons", args, 2);
+        checkArgs(toLispString(), args, 2);
 
         return new LispCons(args.get(0), args.get(1));
     }

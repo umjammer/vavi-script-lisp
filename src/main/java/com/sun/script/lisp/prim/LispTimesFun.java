@@ -21,8 +21,13 @@ import com.sun.script.lisp.LispPrimitive;
  */
 public final class LispTimesFun extends LispPrimitive {
 
+    @Override
+    public String toLispString() {
+        return "*";
+    }
+
     /**
-     * 掛け算を行います．
+     * do multiplication.
      * <p>
      * <tt>
      * (* <i>number1</i> <i>number2</i> [<i>number3</i> ...])
@@ -43,15 +48,15 @@ public final class LispTimesFun extends LispPrimitive {
                 break;
             }
 
-            result *= ((Integer) args.get(index)).intValue();
+            result *= (Integer) args.get(index);
 
             if (result == 0) {
-                return new Integer(0);
+                return 0;
             }
         }
 
         if (index == args.size()) {
-            return new Integer(result);
+            return result;
         } else {
             double dresult = result;
 
@@ -66,7 +71,7 @@ public final class LispTimesFun extends LispPrimitive {
                 index++;
             }
 
-            return new Double(dresult);
+            return dresult;
         }
     }
 }

@@ -13,16 +13,22 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.Reader;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.ServiceLoader;
+
+import vavi.util.Debug;
 
 
 /**
- * S 式で表現された文字列をストリームから読み込み実行するクラスです。 インタラクティブなメソッドと非インタラクティブなメソッドがあります． Lisp
- * エンジンは Scheme を基にしています． extension にパッケージ名を指定することによりユーザが作成した Lisp 関数を
- * LispInterpreter に組み込むことが可能です．
+ * A class that reads and executes a character string represented by an S-expression from a stream.
+ * There are interactive methods and non-interactive methods. The Lisp engine is based on Scheme.
+ * A Lisp function created by the user by specifying the package name in the extension can be incorporated
+ * into LispInterpreter.
  *
  * <pre>
  *
@@ -32,10 +38,10 @@ import java.util.Map;
  *
  * <table border="1">
  * <tr>
- * <td bgcolor="#00FFFF">シンボル</td>
- * <td bgcolor="#00FFFF">説明</td>
- * <td bgcolor="#00FFFF">戻り値</td>
- * <td bgcolor="#00FFFF">S 式</td>
+ * <td bgcolor="#00FFFF">Symbol</td>
+ * <td bgcolor="#00FFFF">Explain</td>
+ * <td bgcolor="#00FFFF">Return</td>
+ * <td bgcolor="#00FFFF">S-Expression</td>
  * </tr>
  * <tr>
  * <td bgcolor="#FFFFCC" colspan="4">Special Forms</td>
@@ -201,67 +207,67 @@ import java.util.Map;
  * </tr>
  * <tr>
  * <td>catch</td>
- * <td>例外処理</td>
+ * <td>catch exception</td>
  * <td> </td>
  * <td> </td>
  * </tr>
  * <tr>
  * <td>throw</td>
- * <td>例外発生</td>
+ * <td>throw exception</td>
  * <td> </td>
  * <td> </td>
  * </tr>
  * <tr>
  * <td>+</td>
- * <td>足し算</td>
+ * <td>addition</td>
  * <td> </td>
  * <td>(+ number number ...)</td>
  * </tr>
  * <tr>
  * <td>*</td>
- * <td>掛け算</td>
+ * <td>multiplication</td>
  * <td> </td>
  * <td>(* number number ...)</td>
  * </tr>
  * <tr>
  * <td>-</td>
- * <td>引き算</td>
+ * <td>subtraction</td>
  * <td> </td>
  * <td> </td>
  * </tr>
  * <tr>
  * <td>/</td>
- * <td>割り算</td>
+ * <td>division</td>
  * <td> </td>
  * <td> </td>
  * </tr>
  * <tr>
  * <td>=</td>
- * <td>イコール</td>
+ * <td>equal</td>
  * <td> </td>
  * <td> </td>
  * </tr>
  * <tr>
  * <td>&lt;</td>
- * <td>より小さい</td>
+ * <td>less than</td>
  * <td> </td>
  * <td> </td>
  * </tr>
  * <tr>
  * <td>&gt;</td>
- * <td>より大きい</td>
+ * <td>greater than</td>
  * <td> </td>
  * <td> </td>
  * </tr>
  * <tr>
  * <td>&lt;=</td>
- * <td>以下</td>
+ * <td>less than</td>
  * <td> </td>
  * <td> </td>
  * </tr>
  * <tr>
  * <td>&gt;=</td>
- * <td>以上</td>
+ * <td>greater equal</td>
  * <td> </td>
  * <td> </td>
  * </tr>
@@ -286,9 +292,6 @@ public final class LispInterpreter {
 
     /** the base name for the package */
     private static final String rootPath = LispInterpreter.class.getPackage().getName();
-
-    /** the base name for package for default primitives */
-    private static final String primitivePath = rootPath + "." + "prim";
 
     /** the base name for package for default extended primitives */
     private static final String defaultPath = rootPath + "." + "extend";
@@ -379,43 +382,23 @@ public final class LispInterpreter {
 
     /** */
     private void init() {
-        createSpecialForm("quote", "QuoteSpecialForm");
-        createSpecialForm("if", "IfSpecialForm");
-        createSpecialForm("lambda", "LambdaSpecialForm");
-        createSpecialForm("define", "DefineSpecialForm");
-        createSpecialForm("set!", "SetSpecialForm");
-        createSpecialForm("apply", "ApplySpecialForm");
-        createSpecialForm("while", "WhileLoopSpecialForm");
-        createBuiltIn("cons", "LispConsFun");
-        createBuiltIn("car", "LispCarFun");
-        createBuiltIn("cdr", "LispCdrFun");
-        createBuiltIn("set-car!", "LispSetCarFun");
-        createBuiltIn("set-cdr!", "LispSetCdrFun");
-        createBuiltIn("exit", "LispExitFun");
-        createBuiltIn("not", "LispNotFun");
-        createBuiltIn("null?", "LispNullFun");
-        createBuiltIn("number?", "LispNumberFun");
-        createBuiltIn("symbol?", "LispSymbolFun");
-        createBuiltIn("pair?", "LispPairFun");
-        createBuiltIn("make", "LispMakeFun");
-        createBuiltIn("make-environment", "LispMakeEnvFun");
-        createBuiltIn("eval", "LispEvalFun");
-        createBuiltIn("load", "LispLoadFun");
-        createBuiltIn("open", "LispOpenFun");
-        createBuiltIn("close", "LispCloseFun");
-        createBuiltIn("read", "LispReadFun");
-        createBuiltIn("print", "LispPrintFun");
-        createBuiltIn("catch", "LispCatchFun");
-        createBuiltIn("throw", "LispThrowFun");
-        createBuiltIn("+", "LispPlusFun");
-        createBuiltIn("*", "LispTimesFun");
-        createBuiltIn("-", "LispMinusFun");
-        createBuiltIn("/", "LispDivideFun");
-        createBuiltIn("=", "LispEqlFun");
-        createBuiltIn(">", "LispGTFun");
-        createBuiltIn("<", "LispLTFun");
-        createBuiltIn(">=", "LispGEFun");
-        createBuiltIn("<=", "LispLEFun");
+        ServiceLoader<LispSpecialForm> specialForms = ServiceLoader.load(LispSpecialForm.class);
+        for (LispSpecialForm sf : specialForms) {
+            try {
+                createSpecialForm(sf);
+            } catch (UnboundSymbolException e) {
+                Debug.println(e);
+            }
+        }
+
+        ServiceLoader<LispPrimitive> prims = ServiceLoader.load(LispPrimitive.class);
+        for (LispPrimitive p : prims) {
+            try {
+                createBuiltIn(p);
+            } catch (UnboundSymbolException e) {
+                Debug.println(e);
+            }
+        }
     }
 
     /**
@@ -476,9 +459,7 @@ public final class LispInterpreter {
                 print(result);
             } catch (CommentLispException e) {
                 // ignore
-            } catch (ExitLispException e) {
-                return;
-            } catch (EOFException e) {
+            } catch (ExitLispException | EOFException e) {
                 return;
             } catch (LispException e) {
                 System.err.println(e);
@@ -499,7 +480,7 @@ public final class LispInterpreter {
      * @throws IOException If an IO error occurs
      */
     public List<Object> interpretQuiet() throws LispException, IOException {
-        List<Object> results = new ArrayList<Object>();
+        List<Object> results = new ArrayList<>();
 
         while (true) {
 
@@ -508,9 +489,7 @@ public final class LispInterpreter {
                 results.add(eval(expression));
             } catch (CommentLispException e) {
                 // ignore
-            } catch (ExitLispException e) {
-                return results;
-            } catch (EOFException e) {
+            } catch (ExitLispException | EOFException e) {
                 return results;
             }
         }
@@ -561,23 +540,26 @@ public final class LispInterpreter {
     /**
      * Creates a "built in" primitive.
      */
-    private void createBuiltIn(String name, String funcName) {
-        set(name, new LispBuiltIn(funcName, primitivePath));
+    private void createBuiltIn(LispPrimitive lispPrimitive) throws UnboundSymbolException {
+        LispSymbol sym = set(lispPrimitive.toLispString(), lispPrimitive);
+        environment.store(sym, lispPrimitive);
     }
 
     /**
      * Creates a "special form" primitive.
      */
-    private void createSpecialForm(String name, String funcName) {
-        set(name, new LispBuiltIn(funcName, rootPath));
+    private void createSpecialForm(LispSpecialForm lispSpecialForm) throws UnboundSymbolException {
+        LispSymbol sym = set(lispSpecialForm.toLispString(), lispSpecialForm);
+        environment.store(sym, lispSpecialForm);
     }
 
     /**
      * Sets a symbol with value.
      */
-    public void set(String name, Object value) {
+    public LispSymbol set(String name, Object value) {
         LispSymbol symbol = LispSymbol.intern(symbols, name);
         symbol.setLocalValue(value);
+        return symbol;
     }
 
     /**
@@ -598,7 +580,7 @@ public final class LispInterpreter {
     }
 
     /** table for symbols */
-    private Map<String, LispSymbol> symbols = new HashMap<String, LispSymbol>();
+    private Map<String, LispSymbol> symbols = new HashMap<>();
 
     /** environment */
     private LispEnv environment = new LispEnv();
@@ -625,7 +607,7 @@ public final class LispInterpreter {
         if (args.length == 0) {
             interpreter = new LispInterpreter(System.in);
         } else {
-            interpreter = new LispInterpreter(new FileInputStream(args[0]));
+            interpreter = new LispInterpreter(Files.newInputStream(Paths.get(args[0])));
         }
 
         List<?> resluts = interpreter.interpretQuiet();

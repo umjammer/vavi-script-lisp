@@ -25,8 +25,13 @@ import com.sun.script.lisp.WrongArgumentCountException;
  */
 public final class LispThrowFun extends LispPrimitive {
 
+    @Override
+    public String toLispString() {
+        return "throw";
+    }
+
     /**
-     * 例外をスローします．
+     * throws an exception.
      * <p>
      * <tt>
      * (throw <i>symbol</i>)
@@ -41,7 +46,7 @@ public final class LispThrowFun extends LispPrimitive {
      */
     public Object apply(List<Object> args, LispInterpreter interp) throws BadArgumentTypeException, WrongArgumentCountException, LispThrowException {
 
-        checkArgs("throw", args, 2);
+        checkArgs(toLispString(), args, 2);
 
         Object arg1 = args.get(0);
         Object value = args.get(1);

@@ -22,8 +22,13 @@ import com.sun.script.lisp.WrongArgumentCountException;
  */
 public final class LispMinusFun extends LispPrimitive {
 
+    @Override
+    public String toLispString() {
+        return "-";
+    }
+
     /**
-     * 引き算を行います．
+     * do subtraction.
      * <p>
      * <tt>
      * (- <i>number1</i> <i>number2</i>)
@@ -36,7 +41,7 @@ public final class LispMinusFun extends LispPrimitive {
      */
     public Object apply(List<Object> args) throws WrongArgumentCountException, BadNumericArgumentException {
 
-        checkArgs("-", args, 2);
+        checkArgs(toLispString(), args, 2);
 
         Object arg1 = args.get(0);
         Object arg2 = args.get(1);

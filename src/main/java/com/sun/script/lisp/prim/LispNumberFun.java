@@ -22,6 +22,11 @@ import com.sun.script.lisp.WrongArgumentCountException;
  */
 public final class LispNumberFun extends LispPrimitive {
 
+    @Override
+    public String toLispString() {
+        return "number?";
+    }
+
     /**
      * Processes <i>number?</i> expression.
      * <p>
@@ -35,7 +40,7 @@ public final class LispNumberFun extends LispPrimitive {
      */
     public Object apply(List<Object> args) throws WrongArgumentCountException {
 
-        checkArgs("number?", args, 1);
+        checkArgs(toLispString(), args, 1);
 
         if (args.get(0) instanceof Number) {
             return LispBoolean.trueValue;

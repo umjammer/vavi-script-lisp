@@ -23,6 +23,11 @@ import com.sun.script.lisp.WrongArgumentCountException;
  */
 public final class LispPairFun extends LispPrimitive {
 
+    @Override
+    public String toLispString() {
+        return "pair?";
+    }
+
     /**
      * Processes <i>pair?</i> expression.
      * <p>
@@ -36,7 +41,7 @@ public final class LispPairFun extends LispPrimitive {
      */
     public Object apply(List<Object> args) throws WrongArgumentCountException {
 
-        checkArgs("pair?", args, 1);
+        checkArgs(toLispString(), args, 1);
 
         if ((args.get(0) instanceof LispCons) && args.get(0) != LispCons.emptyList) {
             return LispBoolean.trueValue;

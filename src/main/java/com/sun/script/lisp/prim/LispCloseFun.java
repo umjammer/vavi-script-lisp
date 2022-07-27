@@ -26,6 +26,11 @@ import com.sun.script.lisp.WrongArgumentCountException;
  */
 public final class LispCloseFun extends LispPrimitive {
 
+    @Override
+    public String toLispString() {
+        return "close";
+    }
+
     /**
      * Processes <i>close</i> expression.
      * <p>
@@ -41,7 +46,7 @@ public final class LispCloseFun extends LispPrimitive {
      */
     public Object apply(List<Object> args, LispInterpreter interp) throws BadArgumentTypeException, WrongArgumentCountException {
 
-        checkArgs("close", args, 1);
+        checkArgs(toLispString(), args, 1);
 
         Object arg = args.get(0);
 

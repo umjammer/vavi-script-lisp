@@ -38,7 +38,7 @@ public class LispScriptEngineFactory implements ScriptEngineFactory {
     };
 
     /** */
-    private LispScriptEngine myScriptEngine;
+    private LispScriptEngine scriptEngine;
     /** */
     private List<String> extensions;
     /** */
@@ -48,7 +48,7 @@ public class LispScriptEngineFactory implements ScriptEngineFactory {
 
     /** */
     public LispScriptEngineFactory() {
-        myScriptEngine = new LispScriptEngine();
+        scriptEngine = new LispScriptEngine(this);
         extensions = Collections.nCopies(1, FILEEXT);
         mimeTypes = Arrays.asList(MIMETYPES);
         names = Arrays.asList(NAMES);
@@ -97,7 +97,7 @@ public class LispScriptEngineFactory implements ScriptEngineFactory {
     @Override
     public String getMethodCallSyntax(String obj, String m, String... args)  {
         StringBuilder sb = new StringBuilder();
-        sb.append("(" + obj + " " + m);
+        sb.append("(").append(obj).append(" ").append(m);
         int len = args.length;
         for (int i = 0; i < len; i++) {
             if (i > 0) {
@@ -129,7 +129,7 @@ public class LispScriptEngineFactory implements ScriptEngineFactory {
 
     @Override
     public LispScriptEngine getScriptEngine() {
-        return myScriptEngine;
+        return scriptEngine;
     }
 }
 

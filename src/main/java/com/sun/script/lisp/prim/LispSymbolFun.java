@@ -16,16 +16,21 @@ import com.sun.script.lisp.WrongArgumentCountException;
 
 
 /**
- * This class processes the lisp primitive of <i>symbol?</i>. The function "symbol?" takes one argument, and returns true if the
- * argument is a lisp symbol or returns false.
+ * This class processes the lisp primitive of <i>symbol?</i>. The function "symbol?" takes one argument,
+ * and returns true if the argument is a lisp symbol or returns false.
  *
  * @author <a href="mailto:umjammer@gmail.com">Naohide Sano</a> (nsano)
  * @version 0.00 970730 nsano make the initial version <br>
  */
 public final class LispSymbolFun extends LispPrimitive {
 
+    @Override
+    public String toLispString() {
+        return "symbol?";
+    }
+
     /**
-     * シンボルかどうかを判別します．
+     * determine symbol or not
      * <p>
      * <tt>
      * (symbol? <i>target</i>)
@@ -39,7 +44,7 @@ public final class LispSymbolFun extends LispPrimitive {
      */
     public Object apply(List<Object> args) throws WrongArgumentCountException {
 
-        checkArgs("symbol?", args, 1);
+        checkArgs(toLispString(), args, 1);
 
         if (args.get(0) instanceof LispSymbol) {
             return LispBoolean.trueValue;

@@ -22,6 +22,11 @@ import com.sun.script.lisp.WrongArgumentCountException;
  */
 public final class LispMakeEnvFun extends LispPrimitive {
 
+    @Override
+    public String toLispString() {
+        return "make-environment";
+    }
+
     /**
      * Processes <i>make-environment</i> expression.
      * <p>
@@ -35,7 +40,7 @@ public final class LispMakeEnvFun extends LispPrimitive {
      */
     public Object apply(List<Object> args) throws WrongArgumentCountException {
 
-        checkArgs("make-environment", args, 0);
+        checkArgs(toLispString(), args, 0);
 
         return new LispEnv();
     }

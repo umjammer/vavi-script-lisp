@@ -26,6 +26,11 @@ import com.sun.script.lisp.WrongArgumentCountException;
  */
 public final class LispPrintFun extends LispPrimitive {
 
+    @Override
+    public String toLispString() {
+        return "print";
+    }
+
     /**
      * Processes <i>print</i> expression.
      * <p>

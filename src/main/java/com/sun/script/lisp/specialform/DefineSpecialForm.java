@@ -5,7 +5,16 @@
  * Programmed by Jerry R. Jackson, Alan L. McClellan
  */
 
-package com.sun.script.lisp;
+package com.sun.script.lisp.specialform;
+
+
+import com.sun.script.lisp.LispCons;
+import com.sun.script.lisp.LispEnv;
+import com.sun.script.lisp.LispEvaluator;
+import com.sun.script.lisp.LispException;
+import com.sun.script.lisp.LispInterpreter;
+import com.sun.script.lisp.LispSpecialForm;
+import com.sun.script.lisp.LispSymbol;
 
 
 /**
@@ -15,6 +24,11 @@ package com.sun.script.lisp;
  * @version 0.00 970730 nsano make the initial version <br>
  */
 public final class DefineSpecialForm extends LispSpecialForm {
+
+    @Override
+    public String toLispString() {
+        return "define";
+    }
 
     /**
      * Evaluates "define" special form.

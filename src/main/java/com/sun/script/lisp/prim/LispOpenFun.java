@@ -29,6 +29,11 @@ import com.sun.script.lisp.WrongArgumentCountException;
  */
 public final class LispOpenFun extends LispPrimitive {
 
+    @Override
+    public String toLispString() {
+        return "open";
+    }
+
     /**
      * Processes <i>open</i> expression.
      * <p>
@@ -47,7 +52,7 @@ public final class LispOpenFun extends LispPrimitive {
      */
     public Object apply(List<Object> args, LispInterpreter interp) throws BadArgumentTypeException, WrongArgumentCountException, BadFileNameException, BadFileIODirectionException {
 
-        checkArgs("open", args, 2);
+        checkArgs(toLispString(), args, 2);
 
         Object arg1 = args.get(0);
         Object arg2 = args.get(1);

@@ -17,6 +17,7 @@ import java.util.List;
 import javax.script.Bindings;
 import javax.script.ScriptContext;
 import javax.script.ScriptEngine;
+import javax.script.ScriptEngineFactory;
 import javax.script.ScriptException;
 import javax.script.SimpleBindings;
 import javax.script.SimpleScriptContext;
@@ -44,14 +45,15 @@ public class LispScriptEngine implements ScriptEngine {
     private static final String STR_THISLANGUAGE = "Scheme";
 
     /** */
-    private static final LispScriptEngineFactory myFactory = new LispScriptEngineFactory();
+    private ScriptEngineFactory factory;
 
     /** */
     private ScriptContext defaultContext;
 
     /** */
-    public LispScriptEngine() {
-        setContext(new SimpleScriptContext());
+    public LispScriptEngine(ScriptEngineFactory factory) {
+        this.factory = factory;
+        defaultContext = new SimpleScriptContext();
         // set special values
         put(LANGUAGE_VERSION, "1.0");
         put(LANGUAGE, STR_THISLANGUAGE);
@@ -92,9 +94,7 @@ public class LispScriptEngine implements ScriptEngine {
                     results.add(interpreter.eval(expression));
                 } catch (CommentLispException e) {
                     // ignore
-                } catch (ExitLispException e) {
-                    return results;
-                } catch (EOFException e) {
+                } catch (ExitLispException | EOFException e) {
                     return results;
                 }
             }
@@ -163,8 +163,8 @@ public class LispScriptEngine implements ScriptEngine {
     }
 
     @Override
-    public LispScriptEngineFactory getFactory() {
-        return myFactory;
+    public ScriptEngineFactory getFactory() {
+        return factory;
     }
 
     /** */
