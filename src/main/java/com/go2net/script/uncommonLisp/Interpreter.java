@@ -8,8 +8,10 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.Reader;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.NoSuchElementException;
+import java.util.ServiceLoader;
 import java.util.logging.Level;
 
 import vavi.util.Debug;
@@ -20,14 +22,23 @@ import vavi.util.Debug;
  */
 public class Interpreter {
 
-    Map env = new HashMap();
+    public Map<Object, Object> env = new HashMap<>();
 
-    public Object interpret(Object sexp) throws RunTimeException {
+    {
+        ServiceLoader<Function> functions = ServiceLoader.load(Function.class);
+        for (Function fn : functions) {
+            String nm = fn.getClass().getSimpleName().replaceFirst("^B", "");
+Debug.println(Level.FINER, "function: " + nm);
+            env.put(nm, fn);
+        }
+    }
+
+    public Object interpret(Object sexp) throws LispException {
         // at this level we want to evaluate each sexp in a quoted list
         // intstead of simply returning the list like evaluateSExp would do
-        if (sexp instanceof java.util.List) {
+        if (sexp instanceof List) {
 
-            java.util.List sexps = (java.util.List) sexp;
+            List<?> sexps = (List<?>) sexp;
             Object result = null;
 
             for (Object s : sexps) {
@@ -41,7 +52,7 @@ public class Interpreter {
         }
     }
 
-    Object evaluateSExp(Object sexp) throws RunTimeException {
+    public Object evaluateSExp(Object sexp) throws LispException {
         // we have to check for instanceof List before instanceof List
         if ((sexp instanceof Integer) || (sexp instanceof String) || (sexp instanceof LispObject)) {
             return sexp;
@@ -50,73 +61,48 @@ public class Interpreter {
         if (sexp instanceof Name)
             return getValue(sexp.toString());
 
-        if (sexp instanceof java.util.List)
-            return evaluateCall((java.util.List) sexp);
+        if (sexp instanceof List)
+            return evaluateCall((List<?>) sexp);
 
-        throw new RunTimeException("Unknown sexp type: " + sexp.getClass().getName(), sexp);
+        throw new LispException("Unknown sexp type: " + sexp.getClass().getName(), sexp);
     }
 
-    Object getValue(Object sexp) throws RunTimeException {
+    Object getValue(Object sexp) throws LispException {
         Object val = env.get(sexp);
         if (val != null)
             return val;
         return new Nil();
     }
 
-    Object evaluateCall(java.util.List sexp) throws RunTimeException {
+    Object evaluateCall(List<?> sexp) throws LispException {
         try {
-            String nm = ((Name) sexp.get(0)).toString();
+            String nm = sexp.get(0).toString();
             Function fn = (Function) env.get(nm);
 
-            if (fn == null) {
-                try {
-                    String fqcn = getClass().getPackage().getName() + ".B" + nm;
-Debug.println(Level.FINER, fqcn);
-                    Class bic = Class.forName(fqcn);
-                    // create an instance of the builtin and insert it into
-                    // the global environment
-                    fn = (Function) bic.newInstance();
-                    env.put(nm, fn);
-
-                } catch (InstantiationException ie) {
-                    throw new RunTimeException("Error instantiating " + "implementation class for " + "builtin function: " + nm,
-                                               sexp);
-
-                } catch (IllegalAccessException iae) {
-                    throw new RunTimeException("Attempted use of class " + "that does not conform to " +
-                                               "Function interface: " + nm,
-                                               sexp);
-
-                } catch (ClassNotFoundException cnfe) {
-                    throw new RunTimeException("Reference to undefined " + "function: " + nm, sexp);
-                }
-            }
-
-            java.util.List args = cdr(sexp);
+            List<?> args = cdr(sexp);
             fn.verifyArguments(args);
             return fn.evaluate(this, args);
 
         } catch (NoSuchElementException nsee) {
-            throw new RunTimeException("Evaluation of empty sexp.", sexp);
+            throw new LispException("Evaluation of empty sexp.", sexp);
 
         } catch (ClassCastException cce) {
-            throw new RunTimeException(cce.toString(), sexp);
+            throw new LispException(cce.toString(), sexp);
         }
     }
 
-    //
-    // Interpreter public static member functions
+    // Interpreter public static member function
 
-    public static java.util.List cdr(java.util.List list) {
+    public static List<?> cdr(List<?> list) {
         return sublist(list, 1);
     }
 
-    public static java.util.List ccdr(java.util.List list) {
+    public static List<?> ccdr(List<?> list) {
         return sublist(list, 2);
     }
 
-    public static java.util.List sublist(java.util.List list, int spos) {
-        java.util.List nv = new java.util.ArrayList();
+    public static List<?> sublist(List<?> list, int spos) {
+        List<Object> nv = new java.util.ArrayList<>();
         for (int i = spos; i < list.size(); i++) {
             nv.add(list.get(i));
         }
@@ -142,7 +128,7 @@ Debug.println(Level.FINER, val);
             Object ret = interp.interpret(val);
 Debug.println(Level.FINE, ret);
 
-        } catch (RunTimeException rte) {
+        } catch (LispException rte) {
             System.err.println(rte);
             System.err.println("SExp: " + rte.sexp);
 

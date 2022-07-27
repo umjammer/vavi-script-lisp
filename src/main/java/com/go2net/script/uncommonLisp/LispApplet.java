@@ -3,15 +3,11 @@
  */
 
 package com.go2net.script.uncommonLisp;
-//
-
-// LispApplet
 
 import java.applet.Applet;
 import java.awt.BorderLayout;
 import java.awt.Button;
 import java.awt.Choice;
-import java.awt.Event;
 import java.awt.FlowLayout;
 import java.awt.Font;
 import java.awt.Panel;
@@ -22,20 +18,41 @@ import java.io.InputStreamReader;
 import java.io.PrintStream;
 import java.io.Reader;
 import java.io.StringReader;
-import java.net.MalformedURLException;
 import java.net.URL;
 
+import com.go2net.script.uncommonLisp.function.Bprint;
 
+
+/** LispApplet */
 public class LispApplet extends Applet implements Runnable {
+
     public void init() {
         setLayout(new BorderLayout());
 
         add("North", _ctrlpanel = new Panel());
         _ctrlpanel.setLayout(new FlowLayout(FlowLayout.CENTER));
-        _ctrlpanel.add(new Button("Run"));
+        Button b = new Button("Run");
+        b.addActionListener(e -> {
+            if (_runner == null) {
+                _out.println("\nRunning. Output shown below:");
+                _runner = new Thread(this);
+                _runner.start();
+            }
+        });
+        _ctrlpanel.add(b);
         _ctrlpanel.add(_choices = new Choice());
-        _ctrlpanel.add(new Button("Load"));
-        _ctrlpanel.add(new Button("Clear"));
+        b = new Button("Run");
+        b.addActionListener(e -> {
+            String source = _sources[_choices.getSelectedIndex()];
+            _out.println("\nLoading: " + source);
+            load(source);
+        });
+        _ctrlpanel.add(b);
+        b = new Button("Clear");
+        b.addActionListener(e -> {
+            _output.setText("");
+        });
+        _ctrlpanel.add(b);
 
         _choices.addItem("Hello World");
         _choices.addItem("Factorial");
@@ -54,31 +71,6 @@ public class LispApplet extends Applet implements Runnable {
         load("hello.lisp");
     }
 
-    public boolean handleEvent(Event evt) {
-        if (evt.id == Event.ACTION_EVENT) {
-            if (evt.target instanceof Button) {
-                Button b = (Button) evt.target;
-
-                if (b.getLabel().equals("Run")) {
-                    if (_runner == null) {
-                        _out.println("\nRunning. Output shown below:");
-                        _runner = new Thread(this);
-                        _runner.start();
-                    }
-
-                } else if (b.getLabel().equals("Load")) {
-                    String source = _sources[_choices.getSelectedIndex()];
-                    _out.println("\nLoading: " + source);
-                    load(source);
-                } else if (b.getLabel().equals("Clear")) {
-                    _output.setText("");
-                }
-            }
-        }
-
-        return super.handleEvent(evt);
-    }
-
     public void run() {
         Reader bin = new StringReader(_input.getText());
 
@@ -86,7 +78,7 @@ public class LispApplet extends Applet implements Runnable {
             Parser p = new Parser(bin);
             _interp.interpret(p.parse());
 
-        } catch (RunTimeException rte) {
+        } catch (LispException rte) {
             _out.println(rte);
             _out.println("SExp: " + rte.sexp);
 
@@ -109,35 +101,25 @@ public class LispApplet extends Applet implements Runnable {
                 _input.append(line + "\n");
             }
 
-        } catch (MalformedURLException mue) {
+        } catch (IOException mue) {
             _out.println("Error loading: " + source + ": " + mue);
 
-        } catch (IOException ioe) {
-            _out.println("Error loading: " + source + ": " + ioe);
         }
     }
 
-    //
     // LispApplet protected constants
 
     final static String[] _sources = {
         "hello.lisp", "fact.lisp", "towers.lisp"
     };
 
-    //
     // LispApplet protected data members
 
     Panel _ctrlpanel;
-
     Choice _choices;
-
     TextArea _input;
-
     TextArea _output;
-
     Interpreter _interp = new Interpreter();
-
     Thread _runner;
-
     PrintStream _out;
 }

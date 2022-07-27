@@ -3,28 +3,25 @@
  */
 
 package com.go2net.script.uncommonLisp;
-//
-
-// TextAreaOutputStream - write output to a text area
 
 import java.awt.TextArea;
 import java.io.IOException;
 import java.io.OutputStream;
 
 
+/** TextAreaOutputStream - write output to a text area */
 public class TextAreaOutputStream extends OutputStream {
-    //
+
     // TextAreaOutputStream public constructor
 
     public TextAreaOutputStream(TextArea target) {
         _target = target;
     }
 
-    //
-    // TextAreaOutputStream public member functions
+    // TextAreaOutputStream public member function
 
     public void flush() throws IOException {
-        _target.appendText(_line.toString());
+        _target.append(_line.toString());
         _line = new StringBuffer();
     }
 
@@ -32,20 +29,19 @@ public class TextAreaOutputStream extends OutputStream {
         _line.append((char) b);
 
         if (b == '\n') {
-            _target.appendText(_line.toString());
+            _target.append(_line.toString());
             _line = new StringBuffer();
         }
     }
 
     public void write(byte[] b) throws IOException {
-        _target.appendText(new String(b, 0));
+        _target.append(new String(b ));
     }
 
     public void write(byte[] b, int off, int len) throws IOException {
-        _target.appendText(new String(b, 0, off, len));
+        _target.append(new String(b, off, len));
     }
 
-    //
     // TextAreaOutputStream protected data members
 
     TextArea _target;

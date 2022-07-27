@@ -4,7 +4,7 @@
 
 package com.go2net.script.uncommonLisp;
 
-import java.util.ArrayList;
+
 import java.util.List;
 
 
@@ -23,7 +23,7 @@ public class Value {
     int type;
     int intval;
     String strval;
-    java.util.List lstval;
+    List<?> lstval;
 
     public Value() {
         type = Value.NIL;
@@ -39,7 +39,7 @@ public class Value {
         strval = name;
     }
 
-    public Value(int type, java.util.List list) {
+    public Value(int type, List<?> list) {
         this.type = type;
         lstval = list;
     }
@@ -51,9 +51,9 @@ public class Value {
         lstval = copyList(rhs.lstval);
     }
 
-    public void setValue(Value rhs) throws RunTimeException {
+    public void setValue(Value rhs) throws LispException {
         if (type != rhs.type)
-            throw new RunTimeException("Type mismatch error.", this);
+            throw new LispException("Type mismatch error.", this);
 
         switch (type) {
         case INTEGER:
@@ -69,7 +69,7 @@ public class Value {
             break;
 
         default:
-            throw new RunTimeException("Internal Error! RHS is an " + "unevaluated sexp.", this);
+            throw new LispException("Internal Error! RHS is an " + "unevaluated sexp.", this);
         }
     }
 
@@ -100,19 +100,19 @@ public class Value {
     }
 
     //
-    // Value public static member functions
+    // Value public static member function
 
-    public static List copyList(List source) {
+    public static LispList copyList(List<?> source) {
         if (source == null)
             return null;
         return copyList(source, 0, source.size());
     }
 
-    public static List copyList(List source, int start, int length) {
+    public static LispList copyList(List<?> source, int start, int length) {
         if (source == null)
             return null;
 
-        java.util.List newvec = new ArrayList();
+        LispList newvec = new LispList();
         for (int i = start; i < start + length; i++) {
             newvec.add(new Value((Value) source.get(i)));
         }
@@ -121,9 +121,9 @@ public class Value {
     }
 
     //
-    // Value protected member functions
+    // Value protected member function
 
-    String listToString(List list, String seperator) {
+    String listToString(List<?> list, String seperator) {
         String rv = "";
 
         for (int i = 0; i < lstval.size(); i++) {

@@ -8,6 +8,7 @@ package com.go2net.script.uncommonLisp;
 import java.io.IOException;
 import java.io.Reader;
 import java.util.ArrayList;
+import java.util.List;
 
 
 class EndOfListException extends Exception {
@@ -19,13 +20,12 @@ public class Parser {
         _scanner = new Scanner(in);
     }
 
-
     /**
      * parse the input stream. function definitions are parsed as calls to the
      * function defun and the interpreter will work it all out
      */
-    public List parse() throws ParseException {
-        List sexps = new List();
+    public LispList parse() throws ParseException {
+        LispList sexps = new LispList();
 
         // insert everything into one big top level list for execution
         try {
@@ -64,7 +64,7 @@ public class Parser {
             if (quoted)
                 return String.valueOf(_scanner.nval);
             else
-                return new Integer((int) _scanner.nval);
+                return (int) _scanner.nval;
 
         case Scanner.TT_WORD:
             if (_scanner.sval.equals("nil")) {
@@ -79,7 +79,7 @@ public class Parser {
             return _scanner.sval;
 
         case '(': {
-            java.util.List list = (quoted ? new List() : new ArrayList());
+            List<Object> list = (quoted ? new LispList() : new ArrayList<>());
 
             try {
                 Object sexp;
@@ -148,7 +148,6 @@ public class Parser {
         }
     }
 
-    //
     // Parser protected data members
 
     Scanner _scanner;

@@ -3,10 +3,9 @@
  */
 
 package com.go2net.script.uncommonLisp;
-//
-
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 
@@ -14,19 +13,18 @@ import java.util.Map;
  * a user defined function interpreted at runtime
  */
 public class UserFunction extends Function {
-    //
+
     // UserFunction public constructor
 
-    public UserFunction(String name, java.util.List args, java.util.List sexps) {
+    public UserFunction(String name, List<?> args, List<?> sexps) {
         _name = name;
         _args = args;
         _sexps = sexps;
     }
 
-    //
-    // UserFunction public member functions
+    // UserFunction public member function
 
-    public Object evaluate(Interpreter interp, java.util.List sexp) throws RunTimeException {
+    public Object evaluate(Interpreter interp, List<?> sexp) throws LispException {
         Map<String, Object> shadowed = new HashMap<>();
 
         for (int i = 0; i < _args.size(); i++) {
@@ -68,12 +66,9 @@ public class UserFunction extends Function {
         return _name;
     }
 
-    //
     // UserFunction protected data members
 
     String _name;
-
-    java.util.List _args;
-
-    java.util.List _sexps;
+    List<?> _args;
+    List<?> _sexps;
 }
