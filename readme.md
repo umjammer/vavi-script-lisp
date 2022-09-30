@@ -1,3 +1,8 @@
+[![Maven Package](https://github.com/umjammer/vavi-script-lisp/actions/workflows/maven-publish.yml/badge.svg)](https://github.com/umjammer/vavi-script-lisp/actions/workflows/maven-publish.yml)
+[![Java CI with Maven](https://github.com/umjammer/vavi-script-lisp/workflows/Java%20CI%20with%20Maven/badge.svg)](https://github.com/umjammer/vavi-script-lisp/actions)
+[![CodeQL](https://github.com/umjammer/vavi-script-lisp/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/umjammer/vavi-script-lisp/actions/workflows/codeql-analysis.yml)
+![Java](https://img.shields.io/badge/Java-8-b07219)
+
 # Lisp interpreter
 
 Those who use this package use the following classes.
@@ -17,3 +22,21 @@ Application-specific exceptions can be nested and thrown with `vavi.apps.lisp.Me
 ## License
 
  * com.sun.script.lisp
+
+   https://archive.org/details/javabyexample00jack
+
+## TODO
+
+ * apply BSF
+ * ~~apply JSR 223~~
+
+### ~~AppleScript~~ -> [vavi-script-apple](https://github.com/umjammer/vavi-script-apple)
+
+ * ~~applescriptengine by rococoa for jdk6<~~
+ * ~~apple script by jna (prevent deprecation after jdk8)~~
+   * ~~https://github.com/mik3hall/AppleScriptEngine~~
+
+### Hypercard
+
+ * https://github.com/defano/wyldcard
+ * https://github.com/pgostation/HyperZebra/
