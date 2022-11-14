@@ -1,1 +1,1 @@
-vavi.apps.lisp.jsr223.ScriptEngineFactory
+com.sun.script.lisp.jsr223.LispScriptEngineFactory

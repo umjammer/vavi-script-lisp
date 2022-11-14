@@ -1,0 +1,16 @@
+com.go2net.script.uncommonLisp.function.Badd
+com.go2net.script.uncommonLisp.function.Bdefun
+com.go2net.script.uncommonLisp.function.Bdiv
+com.go2net.script.uncommonLisp.function.Beq
+com.go2net.script.uncommonLisp.function.Bexample
+com.go2net.script.uncommonLisp.function.Bgt
+com.go2net.script.uncommonLisp.function.Bgte
+com.go2net.script.uncommonLisp.function.Bif
+com.go2net.script.uncommonLisp.function.Blt
+com.go2net.script.uncommonLisp.function.Blte
+com.go2net.script.uncommonLisp.function.Bmul
+com.go2net.script.uncommonLisp.function.Bprint
+com.go2net.script.uncommonLisp.function.Bprintln
+com.go2net.script.uncommonLisp.function.Bsetq
+com.go2net.script.uncommonLisp.function.Bsub
+com.go2net.script.uncommonLisp.function.Bwhile

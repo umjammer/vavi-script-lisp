@@ -1,0 +1,7 @@
+com.sun.script.lisp.specialform.ApplySpecialForm
+com.sun.script.lisp.specialform.DefineSpecialForm
+com.sun.script.lisp.specialform.IfSpecialForm
+com.sun.script.lisp.specialform.LambdaSpecialForm
+com.sun.script.lisp.specialform.QuoteSpecialForm
+com.sun.script.lisp.specialform.SetSpecialForm
+com.sun.script.lisp.specialform.WhileLoopSpecialForm
