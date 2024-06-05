@@ -75,5 +75,3 @@ public final class LispTimesFun extends LispPrimitive {
         }
     }
 }
-
-/* */

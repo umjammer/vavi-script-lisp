@@ -51,5 +51,3 @@ public final class LispFileInputStream extends FileInputStream
     /** The reader */
     private LispReader reader;
 }
-
-/* */

@@ -26,5 +26,3 @@ public final class WrongArgumentCountException extends LispException {
         super(s);
     }
 }
-
-/* */

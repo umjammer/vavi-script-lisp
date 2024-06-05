@@ -70,5 +70,3 @@ public final class LispPrintFun extends LispPrimitive {
         return LispBoolean.trueValue;
     }
 }
-
-/* */

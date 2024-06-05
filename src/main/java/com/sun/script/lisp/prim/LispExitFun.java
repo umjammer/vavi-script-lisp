@@ -45,5 +45,3 @@ public final class LispExitFun extends LispPrimitive {
         throw new ExitLispException();
     }
 }
-
-/* */

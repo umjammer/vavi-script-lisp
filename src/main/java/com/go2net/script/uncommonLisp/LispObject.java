@@ -10,5 +10,3 @@ package com.go2net.script.uncommonLisp;
 public interface LispObject {
 
 }
-
-/* */

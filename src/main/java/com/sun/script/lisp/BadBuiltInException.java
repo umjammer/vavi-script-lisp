@@ -28,5 +28,3 @@ public final class BadBuiltInException extends LispException {
         super(s);
     }
 }
-
-/* */

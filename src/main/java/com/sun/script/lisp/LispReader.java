@@ -443,5 +443,3 @@ public final class LispReader {
     /** quote */
     private LispSymbol quote;
 }
-
-/* */

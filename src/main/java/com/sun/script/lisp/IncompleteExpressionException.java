@@ -30,5 +30,3 @@ public final class IncompleteExpressionException extends LispException {
         super(s);
     }
 }
-
-/* */

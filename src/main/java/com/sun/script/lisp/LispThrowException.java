@@ -51,5 +51,3 @@ public final class LispThrowException extends LispException {
     /** the value of the symbol */
     private Object value;
 }
-
-/* */

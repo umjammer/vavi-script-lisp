@@ -120,5 +120,3 @@ System.err.println("LispLoadFun::apply: " + e);
         return LispBoolean.trueValue;
     }
 }
-
-/* */

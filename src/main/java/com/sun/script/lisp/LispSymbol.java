@@ -88,5 +88,3 @@ public final class LispSymbol {
     /** the name of this symbol */
     private String name;
 }
-
-/* */

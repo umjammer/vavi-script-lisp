@@ -8,14 +8,14 @@ package com.sun.script.lisp;
 
 
 /**
- * 入れ子の例外を持つ例外クラスです．
+ * An exception class that has nested exceptions.
  *
  * @author <a href="mailto:umjammer@gmail.com">Naohide Sano</a> (nsano)
  * @version 0.00 991209 nsano make the initial version <br>
  */
 public final class MetaException extends LispException {
 
-    /** 実際の例外 */
+    /** Actual Exception */
     private Throwable throwable;
 
     /**
@@ -32,5 +32,3 @@ public final class MetaException extends LispException {
         return throwable;
     }
 }
-
-/* */

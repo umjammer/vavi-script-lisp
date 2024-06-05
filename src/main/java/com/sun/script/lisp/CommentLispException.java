@@ -27,5 +27,3 @@ public final class CommentLispException extends LispException {
         super(s);
     }
 }
-
-/* */

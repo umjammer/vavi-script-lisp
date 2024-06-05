@@ -27,5 +27,3 @@ public final class BadArgumentTypeException extends LispException {
         super(s);
     }
 }
-
-/* */

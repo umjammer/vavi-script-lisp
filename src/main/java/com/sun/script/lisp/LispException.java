@@ -28,5 +28,3 @@ public class LispException extends Exception {
         super(s);
     }
 }
-
-/* */

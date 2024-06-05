@@ -28,5 +28,3 @@ public final class BadEvalExpressionException extends LispException {
         super(s);
     }
 }
-
-/* */

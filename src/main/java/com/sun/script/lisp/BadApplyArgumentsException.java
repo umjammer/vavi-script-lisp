@@ -29,5 +29,3 @@ public final class BadApplyArgumentsException extends LispException {
         super(s);
     }
 }
-
-/* */

@@ -156,5 +156,3 @@ public final class LispEvaluator {
     /** The class path string */
     private String classPath;
 }
-
-/* */

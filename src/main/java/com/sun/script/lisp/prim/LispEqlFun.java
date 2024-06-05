@@ -52,5 +52,3 @@ public final class LispEqlFun extends LispPrimitive {
         }
     }
 }
-
-/* */

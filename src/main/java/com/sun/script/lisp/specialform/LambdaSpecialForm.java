@@ -42,5 +42,3 @@ public final class LambdaSpecialForm extends LispSpecialForm {
         return new LispProcedure(exp, env);
     }
 }
-
-/* */

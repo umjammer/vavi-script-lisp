@@ -30,5 +30,3 @@ class LispTest {
         assertEquals(LispBoolean.trueValue, result);
     }
 }
-
-/* */

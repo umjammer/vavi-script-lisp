@@ -82,5 +82,3 @@ public final class LispCatchFun extends LispPrimitive {
         }
     }
 }
-
-/* */

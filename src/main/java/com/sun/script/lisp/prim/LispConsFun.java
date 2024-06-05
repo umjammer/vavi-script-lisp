@@ -45,5 +45,3 @@ public final class LispConsFun extends LispPrimitive {
         return new LispCons(args.get(0), args.get(1));
     }
 }
-
-/* */

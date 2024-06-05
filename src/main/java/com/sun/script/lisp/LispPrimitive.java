@@ -63,5 +63,3 @@ public abstract class LispPrimitive implements LispFunction, LispPrintable {
         }
     }
 }
-
-/* */

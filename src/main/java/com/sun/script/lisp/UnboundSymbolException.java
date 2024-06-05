@@ -26,5 +26,3 @@ public final class UnboundSymbolException extends LispException {
         super(s);
     }
 }
-
-/* */

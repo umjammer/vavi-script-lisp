@@ -26,5 +26,3 @@ public final class BadLoopException extends LispException {
         super(s);
     }
 }
-
-/* */

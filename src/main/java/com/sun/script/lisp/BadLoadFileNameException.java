@@ -26,5 +26,3 @@ public final class BadLoadFileNameException extends LispException {
         super(s);
     }
 }
-
-/* */
