@@ -1,10 +1,8 @@
 /*
- * Lisp Interpreter
- *
- * Copyright (c) 1997 by Naohide Sano, All rights reserved.
+ * Copyright (c) 1996 by SunSoft, All rights reserved.
  *
  * Original by SunSoft Java Series CD-ROM "Java by Example"
- * Programmed by Naohide Sano
+ * Programmed by Jerry R. Jackson, Alan L. McClellan
  */
 
 package com.sun.script.lisp;
@@ -29,21 +27,13 @@ import java.util.Map;
 public final class LispReader {
 
     private static final char LPAREN = '(';
-
     private static final char RPAREN = ')';
-
     private static final char DOT = '.';
-
     private static final char QUOTE = '\'';
-
     private static final char DQUOTE = '"';
-
     private static final char SPACE = ' ';
-
     private static final char TAB = '\t';
-
     private static final char NEWLINE = '\n';
-
     private static final char NEWLINE2 = '\r';
 
     private static final char SHARP = '#';
@@ -53,7 +43,7 @@ public final class LispReader {
     private static final char EOF = (char) -1;
 
     /** The line number of input stream. */
-    private int lineNumber;
+    private final int lineNumber;
 
     /**
      * Creates a Reader object which can read S expression.
@@ -181,7 +171,7 @@ public final class LispReader {
 
 // System.err.println("number: " + numString);
         try {
-            return new Integer(numString);
+            return Integer.parseInt(numString);
         } catch (NumberFormatException e) {
             return Double.valueOf(numString);
         }
@@ -418,8 +408,9 @@ public final class LispReader {
     }
 
     /**
-     * Tell whether this stream is ready to be read. A buffered character stream is ready if the buffer is not empty, or if the
-     * underlying character stream is ready.
+     * Tell whether this stream is ready to be read.
+     * A buffered character stream is ready if the buffer is not empty,
+     * or if the underlying character stream is ready.
      *
      * @throws IOException If an IO error occurs
      * @deprecated
@@ -429,10 +420,10 @@ public final class LispReader {
     }
 
     /** cache for symbols */
-    private Map<String, LispSymbol> symbolMap;
+    private final Map<String, LispSymbol> symbolMap;
 
     /** reader */
-    private Reader reader;
+    private final Reader reader;
 
     /** current character */
     private char ch;

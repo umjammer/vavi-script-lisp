@@ -48,15 +48,15 @@ public final class LispDivideFun extends LispPrimitive {
 
         if (arg1 instanceof Integer) {
             if (arg2 instanceof Integer) {
-                return new Integer(((Integer) arg1).intValue() / ((Integer) arg2).intValue());
+                return (Integer) arg1 / (Integer) arg2;
             } else if (arg2 instanceof Number) {
-                return new Double(((Number) arg1).doubleValue() / ((Number) arg2).doubleValue());
+                return ((Number) arg1).doubleValue() / ((Number) arg2).doubleValue();
             } else {
                 throw new BadNumericArgumentException("Invalid numeric argument: " + arg2);
             }
         } else if (arg2 instanceof Number) {
             if (arg1 instanceof Number) {
-                return new Double(((Number) arg1).doubleValue() / ((Number) arg2).doubleValue());
+                return ((Number) arg1).doubleValue() / ((Number) arg2).doubleValue();
             } else {
                 throw new BadNumericArgumentException("Invalid numeric argument: " + arg1);
             }
