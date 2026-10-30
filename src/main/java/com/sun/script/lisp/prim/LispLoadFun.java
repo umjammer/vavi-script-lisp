@@ -7,6 +7,7 @@
 
 package com.sun.script.lisp.prim;
 
+import java.io.EOFException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -15,6 +16,7 @@ import java.util.List;
 import com.sun.script.lisp.BadArgumentTypeException;
 import com.sun.script.lisp.BadEvalExpressionException;
 import com.sun.script.lisp.BadLoadFileNameException;
+import com.sun.script.lisp.CommentLispException;
 import com.sun.script.lisp.IncompleteExpressionException;
 import com.sun.script.lisp.InvalidLispExpressionException;
 import com.sun.script.lisp.LispBoolean;
@@ -98,13 +100,19 @@ System.err.println("LispLoadFun::apply: " + e);
         LispEnv env = interp.getEnv();
 
         try {
-            while (in.available() > 0) {
+            while (true) {
                 Object readResult = reader.skipRead();
 
                 if (readResult != null) {
-                    evaluator.eval(readResult, env, interp);
+                    try {
+                        evaluator.eval(readResult, env, interp);
+                    } catch (CommentLispException ignore) {
+                    }
+                } else {
+                    break;
                 }
             }
+        } catch (EOFException ignore) {
         } catch (IOException e) {
 System.err.println("LispLoadFun::apply: " + e);
             return LispBoolean.falseValue;

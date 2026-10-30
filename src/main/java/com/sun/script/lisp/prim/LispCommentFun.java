@@ -40,12 +40,12 @@ public final class LispCommentFun extends LispPrimitive {
      */
     public Object apply(List<Object> args) throws WrongArgumentCountException, BadArgumentTypeException {
 
-        if (args.size() > 1) {
+        if (args.size() != 1) {
             throw new WrongArgumentCountException();
         }
 
         if (!(args.get(0) instanceof String)) {
-            throw new BadArgumentTypeException("Invalid numeric argument: " + args.get(0));
+            throw new BadArgumentTypeException("Invalid string argument: " + args.get(0));
         }
 
         return args.get(0);
