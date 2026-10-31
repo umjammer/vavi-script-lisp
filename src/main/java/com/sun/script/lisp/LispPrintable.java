@@ -25,5 +25,3 @@ interface LispPrintable {
      */
     String toLispString();
 }
-
-/* */

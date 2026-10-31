@@ -45,5 +45,3 @@ public final class LispMakeEnvFun extends LispPrimitive {
         return new LispEnv();
     }
 }
-
-/* */

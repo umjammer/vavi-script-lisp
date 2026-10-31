@@ -28,3 +28,4 @@ com.sun.script.lisp.prim.LispSetCdrFun
 com.sun.script.lisp.prim.LispSymbolFun
 com.sun.script.lisp.prim.LispThrowFun
 com.sun.script.lisp.prim.LispTimesFun
+com.sun.script.lisp.prim.LispCommentFun

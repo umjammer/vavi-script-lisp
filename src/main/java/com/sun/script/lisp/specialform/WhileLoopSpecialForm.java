@@ -62,5 +62,3 @@ public final class WhileLoopSpecialForm extends LispSpecialForm {
         return LispBoolean.trueValue;
     }
 }
-
-/* */

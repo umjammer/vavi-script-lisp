@@ -141,7 +141,7 @@ public final class LispEvaluator {
             }
 
             try {
-                symVal = builtIn.newInstance();
+                symVal = builtIn.getDeclaredConstructor().newInstance();
                 env.define(sym, symVal);
             } catch (Exception constructionException) {
                 throw new UnboundSymbolException("Unbound symbol: " + sym);
@@ -156,5 +156,3 @@ public final class LispEvaluator {
     /** The class path string */
     private String classPath;
 }
-
-/* */

@@ -52,5 +52,3 @@ public final class LispEvalFun extends LispPrimitive {
         return ev.eval(args.get(0), (LispEnv) args.get(1), interp);
     }
 }
-
-/* */

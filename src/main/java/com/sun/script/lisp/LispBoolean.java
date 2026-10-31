@@ -68,5 +68,3 @@ public final class LispBoolean implements LispPrintable {
         }
     }
 }
-
-/* */

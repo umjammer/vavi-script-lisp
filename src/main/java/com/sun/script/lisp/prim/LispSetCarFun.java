@@ -46,5 +46,3 @@ public final class LispSetCarFun extends LispPrimitive {
         return args.get(1);
     }
 }
-
-/* */

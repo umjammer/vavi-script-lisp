@@ -129,5 +129,3 @@ public final class LispProcedure implements LispFunction, LispPrintable {
     /** The body of this procedure */
     private LispCons procBody;
 }
-
-/* */

@@ -1,9 +1,11 @@
 [![Release](https://jitpack.io/v/umjammer/vavi-script-lisp.svg)](https://jitpack.io/#umjammer/vavi-script-lisp)
-[![Java CI with Maven](https://github.com/umjammer/vavi-script-lisp/actions/workflows/maven.yml/badge.svg)](https://github.com/umjammer/vavi-script-lisp/actions)
+[![Java CI](https://github.com/umjammer/vavi-script-lisp/actions/workflows/maven.yml/badge.svg)](https://github.com/umjammer/vavi-script-lisp/actions/workflows/maven.yml)
 [![CodeQL](https://github.com/umjammer/vavi-script-lisp/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/umjammer/vavi-script-lisp/actions/workflows/codeql-analysis.yml)
-![Java](https://img.shields.io/badge/Java-8-b07219)
+![Java](https://img.shields.io/badge/Java-17-b07219)
 
-# Lisp interpreter
+# vavi-script-lisp
+
+Lisp interpreters.
 
 Those who use this package use the following classes.
 
@@ -30,8 +32,9 @@ https://jitpack.io/#umjammer/vavi-script-lisp
 
  * [isbn:0135657636 (SunSoft Java Series CD-ROM "Java by Example")](https://archive.org/details/javabyexample00jack)
  * [uncommon lisp](https://web.archive.org/web/19970409021851/http://www.go2net.com/internet/deep/)
+ * [pnuts](https://github.com/kmizu/spnuts)
 
-## License
+### License
 
  * com.sun.script.lisp
 

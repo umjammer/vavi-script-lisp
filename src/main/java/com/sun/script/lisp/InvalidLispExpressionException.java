@@ -30,5 +30,3 @@ public final class InvalidLispExpressionException extends LispException {
         super(s);
     }
 }
-
-/* */

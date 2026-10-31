@@ -54,5 +54,3 @@ public final class SetSpecialForm extends LispSpecialForm {
         return exp.getCadr();
     }
 }
-
-/* */

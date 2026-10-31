@@ -38,5 +38,3 @@ public final class QuoteSpecialForm extends LispSpecialForm {
         return exp.getCadr();
     }
 }
-
-/* */

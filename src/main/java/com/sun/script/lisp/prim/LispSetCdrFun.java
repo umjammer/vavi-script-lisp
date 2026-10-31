@@ -46,5 +46,3 @@ public final class LispSetCdrFun extends LispPrimitive {
         return args.get(1);
     }
 }
-
-/* */

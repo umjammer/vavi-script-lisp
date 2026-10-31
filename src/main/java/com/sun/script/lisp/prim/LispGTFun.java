@@ -58,5 +58,3 @@ public final class LispGTFun extends LispPrimitive {
         }
     }
 }
-
-/* */

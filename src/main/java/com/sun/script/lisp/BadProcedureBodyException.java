@@ -26,5 +26,3 @@ public final class BadProcedureBodyException extends LispException {
         super(s);
     }
 }
-
-/* */

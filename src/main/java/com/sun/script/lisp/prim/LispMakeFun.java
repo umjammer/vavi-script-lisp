@@ -46,11 +46,9 @@ public final class LispMakeFun extends LispPrimitive {
 
         try {
             classToMake = Class.forName((String) args.get(0));
-            return classToMake.newInstance();
+            return classToMake.getDeclaredConstructor().newInstance();
         } catch (Exception e) {
             return LispBoolean.falseValue;
         }
     }
 }
-
-/* */

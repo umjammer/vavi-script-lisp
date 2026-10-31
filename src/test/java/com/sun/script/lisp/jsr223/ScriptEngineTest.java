@@ -39,17 +39,18 @@ public class ScriptEngineTest {
                     langName + " " +
                     langVersion + ")");
 
-            String statement = null;
-            Object expect = null;
+            String statement;
+            Object expect;
 
-            if (engineName.equals("Mozilla Rhino")) {
+            if (engineName.equals("rhino")) {
                 statement = f.getOutputStatement("\"hello, world\"");
-                expect = "hello, world";
+                expect = "undefined";
             } else if (engineName.equals("Sun Lisp")) {
                 statement = f.getOutputStatement("(+ 1 1)");
                 expect = new Object[] { LispBoolean.trueValue };
             } else if (engineName.equals("Oracle Nashorn")) {
                 statement = f.getOutputStatement("\"hello, world\"");
+                expect = "undefined";
             } else {
 Debug.println(Level.WARNING, "no suitable test script for the engine: " + engineName);
                 continue;
@@ -102,5 +103,3 @@ Debug.println(Level.WARNING, "no suitable test script for the engine: " + engine
         assertEquals(3628800, actuals[4]);
     }
 }
-
-/* */

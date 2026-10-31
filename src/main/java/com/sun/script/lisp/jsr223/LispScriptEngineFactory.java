@@ -132,5 +132,3 @@ public class LispScriptEngineFactory implements ScriptEngineFactory {
         return scriptEngine;
     }
 }
-
-/* */

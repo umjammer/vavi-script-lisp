@@ -69,5 +69,3 @@ public final class LispCloseFun extends LispPrimitive {
         return LispBoolean.trueValue;
     }
 }
-
-/* */

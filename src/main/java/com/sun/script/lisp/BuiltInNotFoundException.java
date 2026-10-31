@@ -26,5 +26,3 @@ public final class BuiltInNotFoundException extends LispException {
         super(s);
     }
 }
-
-/* */

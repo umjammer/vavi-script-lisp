@@ -28,5 +28,3 @@ public final class ExitLispException extends LispException {
         super(s);
     }
 }
-
-/* */

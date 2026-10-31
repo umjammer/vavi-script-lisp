@@ -36,5 +36,3 @@ public final class LispFileOutputStream extends PrintWriter implements LispPrint
         return "{file output stream}";
     }
 }
-
-/* */

@@ -105,5 +105,3 @@ public final class LispOpenFun extends LispPrimitive {
         return s;
     }
 }
-
-/* */

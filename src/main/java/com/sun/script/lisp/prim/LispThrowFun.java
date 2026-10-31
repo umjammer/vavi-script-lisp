@@ -62,5 +62,3 @@ public final class LispThrowFun extends LispPrimitive {
         throw new LispThrowException(tag, value);
     }
 }
-
-/* */

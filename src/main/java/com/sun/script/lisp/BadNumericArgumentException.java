@@ -12,7 +12,6 @@ package com.sun.script.lisp;
  * Thrown when a wrong numeric argument is found in arguments.
  *
  * @author <a href="mailto:umjammer@gmail.com">Naohide Sano</a> (nsano)
- *
  * @version 0.00 970730 nsano make the initial version <br>
  */
 public final class BadNumericArgumentException extends LispException {
@@ -27,5 +26,3 @@ public final class BadNumericArgumentException extends LispException {
         super(s);
     }
 }
-
-/* */

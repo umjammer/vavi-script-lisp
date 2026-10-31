@@ -1,10 +1,8 @@
 /*
- * Lisp Interpreter
- *
- * Copyright (c) 1997 by Naohide Sano, All rights reserved.
+ * Copyright (c) 1996 by SunSoft, All rights reserved.
  *
  * Original by SunSoft Java Series CD-ROM "Java by Example"
- * Programmed by Naohide Sano
+ * Programmed by Jerry R. Jackson, Alan L. McClellan
  */
 
 package com.sun.script.lisp;
@@ -29,21 +27,13 @@ import java.util.Map;
 public final class LispReader {
 
     private static final char LPAREN = '(';
-
     private static final char RPAREN = ')';
-
     private static final char DOT = '.';
-
     private static final char QUOTE = '\'';
-
     private static final char DQUOTE = '"';
-
     private static final char SPACE = ' ';
-
     private static final char TAB = '\t';
-
     private static final char NEWLINE = '\n';
-
     private static final char NEWLINE2 = '\r';
 
     private static final char SHARP = '#';
@@ -124,17 +114,28 @@ public final class LispReader {
             return readList();
         case QUOTE:
             ch = getChar();
+            skipWhite();
+            skipComment();
+            if (ch == EOF) {
+                throw new IncompleteExpressionException("Incomplete Expression:\n\n" + charsSoFar.toString().trim());
+            }
             return new LispCons(quote, new LispCons(readInternal(), LispCons.emptyList));
         case DQUOTE:
             return readString();
         case SHARP:
-            char nextch = getChar();
-            ch = ' ';
+            char nextch = getCh();
 
-            if (nextch == 't') {
-                return LispBoolean.trueValue;
-            } else if (nextch == 'f') {
-                return LispBoolean.falseValue;
+            if (nextch == 't' || nextch == 'f') {
+                ch = getCh();
+                if (!isDelimiter(ch)) {
+                    char bad = ch;
+                    ch = ' ';
+                    readError("'" + bad + "' unexpected:");
+                }
+                return nextch == 't' ? LispBoolean.trueValue : LispBoolean.falseValue;
+            } else if (isDelimiter(nextch)) {
+                ch = nextch;
+                return LispSymbol.intern(symbolMap, "#");
             } else {
                 ch = ' ';
                 readError("'" + nextch + "' unexpected:");
@@ -164,26 +165,54 @@ public final class LispReader {
      * @throws IncompleteExpressionException If a S expression reading is not completed.
      * @throws IOException If an IO error occurs.
      */
-    private Object readNumber() throws IncompleteExpressionException, IOException {
+    private Object readNumber() throws IncompleteExpressionException, InvalidLispExpressionException, IOException {
 
         StringBuilder buf = new StringBuilder();
 
         while (Character.isDigit(ch) || ch == '.' || ch == '-') {
             buf.append(ch);
-            ch = getChar();
+            ch = getCh();
+        }
+
+        if (!isDelimiter(ch)) {
+            while (!isDelimiter(ch)) {
+                buf.append(ch);
+                ch = getCh();
+            }
+            String symString = buf.toString();
+            if (symString.charAt(0) == '-') {
+                return LispSymbol.intern(symbolMap, symString);
+            }
+            readError("Invalid number: " + symString);
         }
 
         String numString = buf.toString();
 
-        if (numString.equals("-")) {
-            return LispSymbol.intern(symbolMap, numString);
+        if (numString.startsWith("-")) {
+            if (numString.equals("-")) {
+                return LispSymbol.intern(symbolMap, numString);
+            }
+            try {
+                return Integer.parseInt(numString);
+            } catch (NumberFormatException e1) {
+                try {
+                    return Double.valueOf(numString);
+                } catch (NumberFormatException e2) {
+                    return LispSymbol.intern(symbolMap, numString);
+                }
+            }
         }
 
 // System.err.println("number: " + numString);
         try {
-            return new Integer(numString);
+            return Integer.parseInt(numString);
         } catch (NumberFormatException e) {
-            return Double.valueOf(numString);
+            try {
+                return Double.valueOf(numString);
+            } catch (NumberFormatException e2) {
+                readError("Invalid number: " + numString);
+                return LispCons.emptyList;
+            }
         }
     }
 
@@ -199,14 +228,24 @@ public final class LispReader {
 
         while (ch != SPACE && ch != TAB && ch != NEWLINE && //
                ch != NEWLINE2 && //
-               ch != SEMICOLON && ch != RPAREN && ch != LPAREN) {
+               ch != SEMICOLON && ch != RPAREN && ch != LPAREN && //
+               ch != DQUOTE && ch != QUOTE && ch != EOF) {
 
             buf.append(ch);
-            ch = getChar();
+            ch = getCh();
         }
 
 // System.err.println("symbol: " + buf.toString().length() + ": " + buf.toString());
         return LispSymbol.intern(symbolMap, buf.toString());
+    }
+
+    /**
+     * Checks whether a character is a token delimiter.
+     */
+    private boolean isDelimiter(char c) {
+        return c == SPACE || c == TAB || c == NEWLINE || c == NEWLINE2 ||
+               c == SEMICOLON || c == RPAREN || c == LPAREN ||
+               c == DQUOTE || c == QUOTE || c == EOF;
     }
 
     /**
@@ -249,6 +288,10 @@ public final class LispReader {
             return LispCons.emptyList;
         }
 
+        if (ch == EOF) {
+            throw new IncompleteExpressionException("Incomplete Expression:\n\n" + charsSoFar.toString().trim());
+        }
+
         LispCons listHead = new LispCons(readInternal(), null);
 
         return readCdr(listHead, listHead);
@@ -267,6 +310,9 @@ public final class LispReader {
         skipComment();
 
         while (ch != RPAREN && ch != DOT) {
+            if (ch == EOF) {
+                throw new IncompleteExpressionException("Incomplete Expression:\n\n" + charsSoFar.toString().trim());
+            }
             Object next = readInternal();
             LispCons newCons = new LispCons(next, null);
             currentCons.setCdr(newCons);
@@ -277,6 +323,11 @@ public final class LispReader {
 
         if (ch == DOT) {
             ch = getChar();
+            skipWhite();
+            skipComment();
+            if (ch == EOF) {
+                throw new IncompleteExpressionException("Incomplete Expression:\n\n" + charsSoFar.toString().trim());
+            }
             currentCons.setCdr(readInternal());
             skipWhite();
             skipComment();
@@ -301,7 +352,7 @@ public final class LispReader {
      */
     private void skipComment() throws IOException {
 
-        if (ch == SEMICOLON) {
+        while (ch == SEMICOLON) {
 // System.err.println("LispReader::skipComment: " + (int) ch);
 
             while (ch != NEWLINE && ch != NEWLINE2 && ch != EOF) {
@@ -311,6 +362,7 @@ public final class LispReader {
             if (ch == NEWLINE || ch == NEWLINE2) {
                 ch = getCh(); // check!
             }
+            skipWhite();
         }
     }
 
@@ -335,20 +387,23 @@ public final class LispReader {
      */
     private char getCh() throws IOException {
 
-        if (!ready()) {
-            return EOF;
-        }
+//        if (!ready()) {
+//            return EOF;
+//        }
 
         int next = reader.read();
 // System.err.println("LispReader::getCh: " + next);
 
-//      if (next == -1) {
-//          return EOF;
-//      } else {
+        if (next == -1) {
+            return EOF;
+        } else {
             char nextChar = (char) next;
+            if (nextChar == NEWLINE) {
+                lineNumber++;
+            }
             charsSoFar.append(nextChar);
             return Character.toLowerCase(nextChar);
-//      }
+        }
     }
 
     /**
@@ -359,16 +414,19 @@ public final class LispReader {
      */
     private char getChar() throws IncompleteExpressionException, IOException {
 
-        if (!ready()) {
-            throw new IncompleteExpressionException("Incomplete Expression:\n\n" + charsSoFar.toString().trim());
-        }
+//        if (!ready()) {
+//            throw new IncompleteExpressionException("Incomplete Expression:\n\n" + charsSoFar.toString().trim());
+//        }
 
 // System.err.println("LispReader::getChar: enter");
         int next = reader.read();
 
-// if (next == -1) { throw new IncompleteExpressionException("Incomplete Expression:\n\n" + charsSoFar.toString().trim()); }
+        if (next == -1) { throw new IncompleteExpressionException("Incomplete Expression:\n\n" + charsSoFar.toString().trim()); }
 
         char nextChar = Character.toLowerCase((char) next);
+        if (nextChar == NEWLINE) {
+            lineNumber++;
+        }
         charsSoFar.append(nextChar);
         return nextChar;
     }
@@ -388,6 +446,9 @@ public final class LispReader {
         }
 
         char nextChar = (char) next;
+        if (nextChar == NEWLINE) {
+            lineNumber++;
+        }
         charsSoFar.append(nextChar);
         return nextChar;
     }
@@ -418,8 +479,9 @@ public final class LispReader {
     }
 
     /**
-     * Tell whether this stream is ready to be read. A buffered character stream is ready if the buffer is not empty, or if the
-     * underlying character stream is ready.
+     * Tell whether this stream is ready to be read.
+     * A buffered character stream is ready if the buffer is not empty,
+     * or if the underlying character stream is ready.
      *
      * @throws IOException If an IO error occurs
      * @deprecated
@@ -429,10 +491,10 @@ public final class LispReader {
     }
 
     /** cache for symbols */
-    private Map<String, LispSymbol> symbolMap;
+    private final Map<String, LispSymbol> symbolMap;
 
     /** reader */
-    private Reader reader;
+    private final Reader reader;
 
     /** current character */
     private char ch;
@@ -443,5 +505,3 @@ public final class LispReader {
     /** quote */
     private LispSymbol quote;
 }
-
-/* */

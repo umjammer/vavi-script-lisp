@@ -40,5 +40,3 @@ class InterpreterTest {
         assertEquals(30, interp.interpret(val));
     }
 }
-
-/* */

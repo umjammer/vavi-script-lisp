@@ -69,5 +69,3 @@ public final class ApplySpecialForm extends LispSpecialForm {
         return ((LispFunction) func).apply(vec, interp);
     }
 }
-
-/* */

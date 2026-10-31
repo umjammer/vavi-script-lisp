@@ -122,5 +122,3 @@ public final class LispCons implements LispPrintable {
     /** The next list */
     private Object cdr;
 }
-
-/* */

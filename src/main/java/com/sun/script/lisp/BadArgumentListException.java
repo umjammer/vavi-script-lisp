@@ -16,7 +16,7 @@ package com.sun.script.lisp;
  */
 public final class BadArgumentListException extends LispException {
 
-    /** 詳細メッセージを持たない BadArgumentListException を構築します。 */
+    /** Constructs a BadArgumentListException with no detail message. */
     public BadArgumentListException() {
         super();
     }
@@ -26,5 +26,3 @@ public final class BadArgumentListException extends LispException {
         super(s);
     }
 }
-
-/* */

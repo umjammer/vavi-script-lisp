@@ -73,5 +73,3 @@ public final class DefineSpecialForm extends LispSpecialForm {
     /** the lambda symbol */
     private static LispSymbol lambdaSymbol = null;
 }
-
-/* */

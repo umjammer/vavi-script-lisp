@@ -27,5 +27,3 @@ public interface LispFunction {
      */
     Object apply(List<Object> args, LispInterpreter interp) throws LispException;
 }
-
-/* */

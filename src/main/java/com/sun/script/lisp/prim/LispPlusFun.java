@@ -27,7 +27,7 @@ public final class LispPlusFun extends LispPrimitive {
     }
 
     /**
-     * 足し算を行います．
+     * Do the addition.
      * <p>
      * <tt>
      * (+ <i>number1</i> <i>number2</i> [<i>number3</i> ...])
@@ -70,5 +70,3 @@ public final class LispPlusFun extends LispPrimitive {
         }
     }
 }
-
-/* */

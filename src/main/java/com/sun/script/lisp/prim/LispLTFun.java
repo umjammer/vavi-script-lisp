@@ -58,5 +58,3 @@ public final class LispLTFun extends LispPrimitive {
         }
     }
 }
-
-/* */
